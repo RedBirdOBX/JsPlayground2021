@@ -1,0 +1,68 @@
+﻿@page
+
+@model JsPlayground.Pages.Javascript.Modules.ExportsDefaultModel
+
+@{
+    string pageId = "Export Default";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+@{
+    ViewData["Title"] = pageId;
+}
+
+@section LibraryHeader {JavaScript}
+@section BreadCrumbLibrary {javascript}
+@section BreadCrumbAnchor {js-modules}
+@section BreadCrumbChapter {modules}
+@section BreadCrumbPageName {@pageId.ToLower()}
+@section PageName {@pageId}
+
+<p>
+    Where as with <a href="NamedExports">Named Exports</a>, you can export certain members of a module,
+    <code>export default</code> allows you to export a "default" scope of code without having to name it explicitly
+    in your import.  With the right structure, you can also use <code>export default</code> and export a whole object
+    with many functions as properties.
+</p>
+
+<p>
+    It's basically saying "export this thing as the default and the import doesn't need to know the real name".
+</p>
+
+<pre>
+<code>
+// in theory, HelloWorld1 is the one that doesn't have to be explicitly named with the import.
+const HelloWorld1 = () => { console.log(`Hello World 1`); };
+const HelloWorld2 = () => { console.log(`Hello World 2`); };
+const HelloWorld3 = () => { console.log(`Hello World 3`); };
+
+export { HelloWorld1 as default, HelloWorld2, HelloWorld3 };
+</code>
+</pre>
+
+<p>You can also use export default like so:</p>
+
+<pre>
+<code>
+const HelloWorld1 = () => { console.log(`Hello World 1`); };
+
+export { HelloWorld1 as default};
+</code>
+</pre>
+
+
+
+<p>The import might look like:</p>
+
+<pre>
+<code>
+import hw1 from 'GreetingsDefaultExport.js';
+import {HelloWorld2, HelloWorld3} from './GreetingsDefaultExport.js';
+</code>
+</pre>
+
+<p>&nbsp;</p>
+
+@section Scripts
+{
+}

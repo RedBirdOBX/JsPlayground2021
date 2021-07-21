@@ -1,0 +1,109 @@
+﻿@page
+
+@model JsPlayground.Pages.Javascript.Objects.ComparingObjectsModel
+
+@{
+    string pageId = "Comparing Objects";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+@{
+    ViewData["Title"] = pageId;
+}
+
+@section LibraryHeader {JavaScript}
+@section BreadCrumbLibrary {javascript}
+@section BreadCrumbAnchor {js-objects}
+@section BreadCrumbChapter {objects}
+@section BreadCrumbPageName {@pageId.ToLower()}
+@section PageName {@pageId}
+
+
+<p>
+    Sometimes you will need to create two objects.  They may be identical in structure but could differ in
+    properties/value.  An easy way (quick &Aacute; dirty) is to serialize them.
+</p>
+
+<p>
+    <a href="https://stackoverflow.com/questions/1068834/object-comparison-in-javascript" target="_blank">
+        https://stackoverflow.com/questions/1068834/object-comparison-in-javascript
+    </a>
+</p>
+
+<pre>
+<code>
+function Car(color, speed)
+{
+    this.Color = color;
+    this.Speed = speed;
+}
+
+let car1 = new Car("Red", "Fast");
+let car2 = {};
+Object.assign(car2, car1);
+
+// even though they are diff objs, this should test TRUE.
+let comparison1 = (JSON.stringify(car1) === JSON.stringify(car2));
+let results1 = `Are they the same? ${comparison1}`;
+</code>
+</pre>
+
+<div class="card text-white bg-info mt-2">
+    <div class="card-body">
+        <div id="demo1"></div>
+    </div>
+</div>
+
+<p>&nbsp;</p>
+<p>Now change one....</p>
+
+<pre>
+<code>
+// now change one....
+car2.Color = "Brown";
+car2.Speed = "Slow";
+let comparison2 = (JSON.stringify(car1) === JSON.stringify(car2));
+let results2 = `Are they the same? ${comparison2}`;
+</code>
+</pre>
+
+<div class="card text-white bg-info mt-2">
+    <div class="card-body">
+        <div id="demo2"></div>
+    </div>
+</div>
+
+<p>&nbsp;</p>
+
+
+<p>&nbsp;</p>
+
+@section Scripts
+{
+    <script>
+        function Car(color, speed) {
+            this.Color = color;
+            this.Speed = speed;
+        }
+
+        let car1 = new Car("Red", "Fast");
+        let car2 = {};
+        Object.assign(car2, car1);
+
+        // even though they are diff objs, this should test TRUE.
+        let comparison1 = (JSON.stringify(car1) === JSON.stringify(car2));
+        let results1 = `Are they the same? ${comparison1}`;
+
+        // now change one....
+        car2.Color = "Brown";
+        car2.Speed = "Slow";
+        let comparison2 = (JSON.stringify(car1) === JSON.stringify(car2));
+        let results2 = `Are they the same? ${comparison2}`;
+
+        window.onload = function ()
+        {
+            document.getElementById("demo1").innerHTML = results1;
+            document.getElementById("demo2").innerHTML = results2;
+        }
+    </script>
+}

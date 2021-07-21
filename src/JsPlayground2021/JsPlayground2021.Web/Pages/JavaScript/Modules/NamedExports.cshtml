@@ -1,0 +1,82 @@
+﻿@page
+
+@model JsPlayground.Pages.Javascript.Modules.NamedExportsModel
+
+@{
+    string pageId = "Named Exports";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+@{
+    ViewData["Title"] = pageId;
+}
+
+@section LibraryHeader {JavaScript}
+@section BreadCrumbLibrary {javascript}
+@section BreadCrumbAnchor {js-modules}
+@section BreadCrumbChapter {modules}
+@section BreadCrumbPageName {@pageId.ToLower()}
+@section PageName {@pageId}
+
+<p>
+    The export keyword expects a <strong>list</strong> of methods to export contained within <code>{ }</code>.
+    It's essentially saying "export everything I specify".
+    You can export each method like so:
+</p>
+
+<pre>
+<code>
+const _msg = "Hello World";
+
+export const HelloWorld1 = () => { console.log(`${_msg} 1`); };
+// or
+// export function HelloWorld1()
+// {
+//    console.log(`${_msg} 1`);
+//  };
+</code>
+</pre>
+
+<p>
+    Or you can do it at the end of the file like so:
+</p>
+
+
+<pre>
+<code>
+const _msg = "Hello World";
+const HelloWorld1 = () => { console.log(`${_msg} 1`); };
+const HelloWorld2 = () => { console.log(`${_msg} 2`); };
+
+export { HelloWorld1, HelloWorld2 };
+</code>
+</pre>
+
+<p>
+    You can even use aliases:
+</p>
+
+<pre>
+<code>
+export { HelloWorld1, HelloWorld2, HelloWorld3 as HW3};
+</code>
+</pre>
+
+<p>It's very important to remember that when you import any module(s), you use the <code>type="module"</code> attribute.</p>
+
+<pre>
+<code>
+&lt;script src="javascripts/NamedExportsDemoApp.js" <mark>type="module"</mark>&gt;&lt;/script&gt;
+</code>
+</pre>
+
+<p>View the console.</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+@section Scripts
+{
+    <script src="~/assets/javascripts/NamedExportsDemoApp.js" type="module"></script>
+}

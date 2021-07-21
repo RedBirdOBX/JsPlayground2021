@@ -1,0 +1,50 @@
+﻿@page
+
+@model JsPlayground.Pages.Javascript.Modules.ImportingModel
+
+@{
+    string pageId = "Importing";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+@{
+    ViewData["Title"] = pageId;
+}
+
+@section LibraryHeader {JavaScript}
+@section BreadCrumbLibrary {javascript}
+@section BreadCrumbAnchor {js-modules}
+@section BreadCrumbChapter {modules}
+@section BreadCrumbPageName {@pageId.ToLower()}
+@section PageName {@pageId}
+
+<p>
+    Just as you can <code>export</code> a whole collection of methods, or the entire object, you can <code>import</code>
+    explicit methods or the whole object which was exported.
+</p>
+
+<pre>
+<code>
+// js file
+
+// this is a default import.  the exporter must have been marked as 'export default'
+// we can name this anything.
+import anything from 'myFile.js';
+
+// or
+import {method1, method2} from 'myFile.js';
+
+// or
+import * as imported from 'myFile.js';
+
+// or
+import anythingFromDefaultExport, {someOtherMethodExportedOnmyFile.js} from 'myFile.js';
+</code>
+</pre>
+
+
+<p>&nbsp;</p>
+
+@section Scripts
+{
+}

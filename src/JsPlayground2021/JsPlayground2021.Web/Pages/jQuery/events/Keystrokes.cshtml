@@ -1,0 +1,87 @@
+﻿@page
+
+@model JsPlayground.Pages.jquery.events.KeystrokesModel
+
+@{
+    string pageId = "Keystrokes";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+@{
+    ViewData["Title"] = pageId;
+}
+
+@section LibraryHeader {jQuery}
+@section BreadCrumbLibrary {jquery}
+@section BreadCrumbAnchor {jq-events}
+@section BreadCrumbChapter {events}
+@section BreadCrumbPageName {@pageId.ToLower()}
+@section PageName {@pageId}
+
+<p>The jQuery <strong>event.which</strong> will return <strong>which</strong> keyboard key was pressed.</p>
+
+<p>Type a character in the textbox. Watch what happens when you press the key; hold the key down, and the release the key.</p>
+
+<p><input type="text" id="txtDemo" class="form-control"></p>
+
+<div class="well well-sm">
+    <h4 id="demo1" class="text-danger"></h4>
+    <h4 id="demo2" class="text-danger"></h4>
+</div>
+
+<p>&nbsp;</p>
+
+<p>There are a few events to keep in mind when you are trying to detect and validate input which are:</p>
+
+<ul>
+    <li><strong>.keydown()</strong> - all keys trigger this...even function keys like Shift, Enter, Delete, etc.</li>
+    <li><strong>.keypress()</strong> - excludes non-printing keys such as Shift, Enter, Delete, etc.</li>
+    <li><strong>.keyup()</strong> - triggered when a key is released.</li>
+</ul>
+
+<p><a href="http://www.w3schools.com/jquery/event_which.asp" target="_blank">http://www.w3schools.com/jquery/event_which.asp</a></p>
+<p><a href="http://api.jquery.com/keydown/" target="_blank">http://api.jquery.com/keydown/</a></p>
+<p><a href="http://api.jquery.com/keypress/" target="_blank">http://api.jquery.com/keypress/</a></p>
+<p><a href="http://api.jquery.com/keyup/" target="_blank">http://api.jquery.com/keyup/</a></p>
+
+<pre>
+<code>
+$(document).ready(function ()
+{
+    $("#txtDemo").keydown(function (event)
+    {
+        console.dir(event);
+        $("#demo1").html("Key: " + event.which + " was pressed down.");
+    });
+
+    $("#txtDemo").keyup(function (event)
+    {
+        console.dir(event);
+        $("#demo2").html("Key: " + event.which + " was released.");
+    });
+});
+</code>
+</pre>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+
+@section Scripts
+{
+    <script>
+        $(document).ready(function () {
+            $("#txtDemo").keydown(function (event)
+            {
+                console.dir(event);
+                $("#demo1").html("Key: " + event.which + " was pressed down.");
+            });
+            $("#txtDemo").keyup(function (event)
+            {
+                console.dir(event);
+                $("#demo2").html("Key: " + event.which + " was released.");
+            });
+        });
+    </script>
+}

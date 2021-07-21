@@ -1,0 +1,81 @@
+﻿@page
+
+@model JsPlayground.Pages.Javascript.Objects.PropertiesModel
+
+@{
+    string pageId = "Properties";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+@{
+    ViewData["Title"] = pageId;
+}
+
+@section LibraryHeader {JavaScript}
+@section BreadCrumbLibrary {javascript}
+@section BreadCrumbAnchor {js-objects}
+@section BreadCrumbChapter {objects}
+@section BreadCrumbPageName {@pageId.ToLower()}
+@section PageName {@pageId}
+
+<p>
+    You can access object properties like so:
+</p>
+
+<pre>
+<code>
+$("#demo").html("First name is " + <mark>person.firstName</mark>);
+...or....
+$("#demo").html("First name is " + <mark>person["firstName"]</mark>);
+</code>
+</pre>
+
+<p>&nbsp;</p>
+
+<p>
+    The second example deserves some exploration. What if you had a scenario where you wanted to select
+    and use an object's property dynamically?  What if you wanted to select First Name, Last Name, or age at will?
+    You can actually pass in the property name as an argument and since it will be seen as a string, the code below
+    will work fine.
+</p>
+
+<pre>
+<code>
+let person = { Name: "Ricky Bobby", Occupation: "Race Car Driver", Gender: "Male", Age: 45 };
+const ShowProperty = (prop) => { $("#demo").html(<mark>person[prop]</mark>); };
+ShowProperty("Name");
+
+// another example
+const GetBackgroundColor = (answerStatus) =>
+{
+    let mapping =
+    {
+        "none": "",
+        "correct": "green",
+        "wrong": "red"
+    };
+
+    // returns "", green or red
+    return mapping[answerStatus];
+};
+
+</code>
+</pre>
+
+
+<div class="card text-white bg-info my-3">
+    <div class="card-body">
+        <div id="demo"></div>
+    </div>
+</div>
+
+<p>&nbsp;</p>
+
+@section Scripts
+{
+    <script>
+        let person = { Name: "Ricky Bobby", Occupation: "Race Car Driver", Gender: "Male", Age: 45 };
+        const ShowProperty = (prop) => { $("#demo").html(person[prop]); };
+        ShowProperty("Name");
+    </script>
+}

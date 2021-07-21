@@ -1,0 +1,54 @@
+﻿@page
+@using JsPlayground.Pages.Javascript.Arrays
+
+@model IsArrayModel
+
+@{
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+@{
+    ViewData["Title"] = "isArray()";
+}
+
+@section LibraryHeader {JavaScript}
+@section BreadCrumbLibrary {javascript}
+@section BreadCrumbAnchor {js-arrays}
+@section BreadCrumbChapter {arrays}
+@section BreadCrumbPageName {isArray()}
+@section PageName {isArray()}
+
+<p class="text-center">
+    <a href="https://www.w3schools.com/jsref/jsref_obj_array.asp" target="_blank">
+        https://www.w3schools.com/jsref/jsref_obj_array.asp
+    </a>
+</p>
+
+<p>Using isArray, which is a method that returns a boolean, let's you determine if a variable is an array or not.</p>
+
+<div>
+    <h3 class="text-danger" id="demo"></h3>
+    <h3 class="text-danger" id="demo2"></h3>
+</div>
+
+<pre>
+<code>
+let fruits = ["banana", "apple", "pear"];
+let fruit = "orange";
+document.getElementById("demo").innerHTML = "is fruits an array: " + Array.isArray(fruits).toString();
+document.getElementById("demo2").innerHTML = "is fruit an array: " + Array.isArray(fruit).toString();
+</code>
+</pre>
+
+<p>&nbsp;</p>
+
+
+@section Scripts
+{
+    <script>
+        let fruits = ["banana", "apple", "pear"];
+        let fruit = "orange";
+        document.getElementById("demo").innerHTML = "is fruits an array: " + Array.isArray(fruits).toString();
+        document.getElementById("demo2").innerHTML = "is fruits an array: " + Array.isArray(fruit).toString();
+    </script>
+}

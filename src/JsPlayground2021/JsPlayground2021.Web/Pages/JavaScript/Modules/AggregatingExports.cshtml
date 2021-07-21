@@ -1,0 +1,56 @@
+﻿@page
+
+@model JsPlayground.Pages.Javascript.Modules.AggregatingExportsModel
+
+@{
+    string pageId = "Aggregating Exports";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+@{
+    ViewData["Title"] = pageId;
+}
+
+@section LibraryHeader {JavaScript}
+@section BreadCrumbLibrary {javascript}
+@section BreadCrumbAnchor {js-modules}
+@section BreadCrumbChapter {modules}
+@section BreadCrumbPageName {@pageId.ToLower()}
+@section PageName {@pageId}
+
+<p>
+    It is possible in one module to export <strong>other</strong> modules as well.
+    For anything that <code>imports</code> this "greeter.js" file, this will also
+    get all of the functionality of "otherfile.js".
+    It's like saying "export this from this module....and this other stuff from this other file".
+</p>
+
+<pre>
+<code>
+// greeter.js file
+const HelloWorld1 = () => { console.log(`Hello World 1`); };
+const HelloWorld2 = () => { console.log(`Hello World 2`); };
+const HelloWorld3 = () => { console.log(`Hello World 3`); };
+
+export { HelloWorld1 as default, HelloWorld2, HelloWorld3 };
+export { SomeOtherMethod } from 'otherfile.js';
+</code>
+</pre>
+
+<p>
+    I'm not sure I like this approach. Seems cleaner to explicitly import the module directly from
+    its source like so:
+</p>
+
+<pre>
+<code>
+import { Method1 } from 'file.js';
+import { Method2 } from 'otherfile.js';
+</code>
+</pre>
+
+<p>&nbsp;</p>
+
+@section Scripts
+{
+}

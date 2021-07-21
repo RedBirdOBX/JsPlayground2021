@@ -1,0 +1,57 @@
+﻿@page
+
+@model JsPlayground.Pages.Javascript.Modules.BasicsModel
+
+@{
+    string pageId = "Module Basics";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+@{
+    ViewData["Title"] = pageId;
+}
+
+@section LibraryHeader {JavaScript}
+@section BreadCrumbLibrary {javascript}
+@section BreadCrumbAnchor {js-modules}
+@section BreadCrumbChapter {modules}
+@section BreadCrumbPageName {@pageId.ToLower()}
+@section PageName {@pageId}
+
+<p>
+    ES6 (ECMAScript 6) has introduced a mechanism that allows us to build modules natively in JavaScript. We do that with two new keywords, import and export.
+</p>
+
+<ul>
+    <li><code>Export</code> is the keyword we use to create the module and make is consumable</li>
+    <li><code>Import</code> is the keyword that lets us consume that module</li>
+    <li>Both <code>Import</code> and <code>Export</code> expect a list of items to import/export within a set of <code>{ }</code>.</li>
+    <li>Most modern browsers can use modules now but you need to set the <code>type</code> as <code>module</code></li>
+</ul>
+
+<p>
+    The import and export keywords allow us to encapsulate our code into a single protected entity. This allows us to control access to the code within too.
+</p>
+
+<p>
+    We can and will reference our own dependencies internally. We can use it as-needed to keep scope to a minimum.
+</p>
+
+
+<p><strong>Module considerations:</strong></p>
+
+<ul>
+    <li><strong>Modules are singletons</strong> - when you export something from a module, every other thing that imports that module gets the same instance of it.</li>
+    <li><strong>Items exported are not just values, they're pointers</strong> - they are bound. if something is exported and then changed, it changes everywhere.</li>
+    <li><strong>Exports are static</strong> - you can't change it later at run time. Once it's loaded, it stays how it is. They are static</li>
+    <li><strong>One module per file</strong> - seems like common sense. Modules are filed-based.</li>
+    <li><strong>Module Bundler</strong> -  depending on your implementation, you may need a like webpack. It will consolidate them all down into one file.</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+@section Scripts
+{
+}

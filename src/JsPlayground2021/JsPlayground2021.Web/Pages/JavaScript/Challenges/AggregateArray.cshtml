@@ -1,0 +1,182 @@
+﻿@page
+@model JsPlayground.Pages.Javascript.Challenges.AggregateArrayModel
+
+@{
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+@{
+    ViewData["Title"] = "Aggregate Array";
+}
+
+@section LibraryHeader {JavaScript}
+@section BreadCrumbLibrary {javascript}
+@section BreadCrumbAnchor {js-challenges}
+@section BreadCrumbChapter {challenges}
+@section BreadCrumbPageName {aggregate array}
+@section PageName {Aggregate Array}
+
+<p>&nbsp;</p>
+
+<p>
+    Say you have a collection of authors in an array. Each author has a property of <code>books</code> which is a list
+    of string (book titles).  You need to create a list of all books by all authors <strong>and</strong> have them
+    sorted them in alpha-numeric order.
+</p>
+
+<p>
+    Authors looks like this:
+</p>
+
+<pre>
+<code>
+const authors =
+[
+    {
+        name: 'Mark Twain',
+        imageUrl: 'Images/Authors/mark-twain.jpg',
+        books: ['The Adventures of Huckleberry Finn', 'Life on the Mississippi']
+    },
+    {
+        name: 'Joseph Conrad',
+        imageUrl: 'Images/Authors/joseph-conrad.jpg',
+        books: ['Heart of Darkness']
+    },
+    {
+        name: 'J.K Rowling',
+        imageUrl: 'Images/Authors/jk-rowling.jpg',
+        books: ['Harry Potter and the Sorcerers Stone']
+    },
+    {
+        name: 'Stephen King',
+        imageUrl: 'Images/Authors/stephen-king.jpg',
+        books: ['The Shining', 'It']
+    },
+    {
+        name: 'William Shakespeare',
+        imageUrl: 'Images/Authors/william-shakespeare.jpg',
+        books: ['Hamlet', 'Macbeth']
+    },
+    {
+        name: 'Arthur C Clarke',
+        imageUrl: 'Images/Authors/arthur-c-clarke.jpg',
+        imageSource: 'Wikimedia Commons',
+        books: ['2001', 'Rendevous with Rama']
+    },
+    {
+        name: 'Isaas Asimov',
+        imageUrl: 'Images/Authors/isaac-asimov.jpg',
+        imageSource: 'Wikimedia Commons',
+        books: ['The Gods Themselves', 'Robot Dreams', 'The Naked Sun']
+    }
+];
+</code>
+</pre>
+
+<p>The new array should look like this:</p>
+
+<pre>
+<code>
+const books =
+[
+    'The Adventures of Huckleberry Finn',
+    'Life on the Mississippi',
+    'Heart of Darkness'
+    'Harry Potter and the Sorcerers Stone',
+    'The Shining',
+    'It',
+    'Hamlet',
+    'Macbeth'...etc...
+];
+</code>
+</pre>
+
+<div class="text-center m-5">
+    <button id="ShowSolutionButton" class="btn btn-info">Show Solution</button>
+</div>
+
+<div id="SolutionContainer">
+
+    <div class="card text-white bg-info m-3">
+        <div class="card-body" id="DemoContainer">
+        </div>
+    </div>
+
+    <pre>
+        <code>
+            const authors = //shown above;
+            let books = [];
+            let output = "";
+
+            authors.forEach((author) => { author.books.forEach((book) => { books.push(book); }); });
+            books = books.sort();
+            output = books.join(", ");
+            $("#DemoContainer").html(output);
+        </code>
+    </pre>
+</div>
+
+<p>&nbsp;</p>
+
+@section Scripts
+{
+    <script>
+
+        let books = [];
+        const authors =
+            [
+                {
+                    name: 'Mark Twain',
+                    imageUrl: 'Images/Authors/mark-twain.jpg',
+                    books: ['The Adventures of Huckleberry Finn', 'Life on the Mississippi']
+                },
+                {
+                    name: 'Joseph Conrad',
+                    imageUrl: 'Images/Authors/joseph-conrad.jpg',
+                    books: ['Heart of Darkness']
+                },
+                {
+                    name: 'J.K Rowling',
+                    imageUrl: 'Images/Authors/jk-rowling.jpg',
+                    books: ['Harry Potter and the Sorcerers Stone']
+                },
+                {
+                    name: 'Stephen King',
+                    imageUrl: 'Images/Authors/stephen-king.jpg',
+                    books: ['The Shining', 'It']
+                },
+                {
+                    name: 'William Shakespeare',
+                    imageUrl: 'Images/Authors/william-shakespeare.jpg',
+                    books: ['Hamlet', 'Macbeth']
+                },
+                {
+                    name: 'Arthur C Clarke',
+                    imageUrl: 'Images/Authors/arthur-c-clarke.jpg',
+                    imageSource: 'Wikimedia Commons',
+                    books: ['2001', 'Rendevous with Rama']
+                },
+                {
+                    name: 'Isaas Asimov',
+                    imageUrl: 'Images/Authors/isaac-asimov.jpg',
+                    imageSource: 'Wikimedia Commons',
+                    books: ['The Gods Themselves', 'Robot Dreams', 'The Naked Sun']
+                }
+            ];
+        let output = "";
+        authors.forEach((author) => { author.books.forEach((book) => { books.push(book); }); });
+
+        // a lot less efficient
+        //authors.reduce(function (p, c, i) { return p.concat(c.books) }, []);
+
+        books = books.sort();
+        output = books.join(", ");
+
+        $("#DemoContainer").html(output);
+        $("#SolutionContainer").hide();
+
+        $("#ShowSolutionButton").click(function () {
+            $("#SolutionContainer").toggle();
+        });
+    </script>
+}
