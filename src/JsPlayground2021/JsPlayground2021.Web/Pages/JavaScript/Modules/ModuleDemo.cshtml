@@ -1,0 +1,74 @@
+﻿@page
+
+@model JsPlayground.Pages.Javascript.Modules.ModuleDemoModel
+
+@{
+    string pageId = "Module Demo";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+@{
+    ViewData["Title"] = pageId;
+}
+
+@section LibraryHeader {JavaScript}
+@section BreadCrumbLibrary {javascript}
+@section BreadCrumbAnchor {js-modules}
+@section BreadCrumbChapter {modules}
+@section BreadCrumbPageName {@pageId.ToLower()}
+@section PageName {@pageId}
+
+<p>
+    This shows the values before and after the are passed thru the methods in the imported modules.
+</p>
+
+<table class="table table-sm">
+    <tbody>
+        <tr>
+            <td><strong>before</strong></td>
+            <td>hello</td>
+            <td>1000000</td>
+            <td>100000000</td>
+            <td>0.42</td>
+        </tr>
+        <tr>
+            <td><strong>after</strong></td>
+            <td><span id="demo1"></span></td>
+            <td><span id="demo2"></span></td>
+            <td><span id="demo3"></span></td>
+            <td><span id="demo4"></span></td>
+        </tr>
+    </tbody>
+</table>
+
+<p>&nbsp;</p>
+
+<pre>
+<code>
+import { CapitalizeFirstLetter, FormatAsUSCurrency, AddCommas, ConvertToPercentageString } from './StringUtilities.js';
+
+$(function ()
+{
+    let msg = "hello";
+    $("#demo1").text(CapitalizeFirstLetter(msg));
+
+    let money = 1000000;
+    $("#demo2").text(FormatAsUSCurrency(money));
+
+    let longNumber = 100000000;
+    $("#demo3").text(AddCommas(longNumber));
+
+    let pct = 0.42;
+    $("#demo4").text(ConvertToPercentageString(pct));
+});
+
+&lt;script src="~/assets/javascripts/modules/ModuleDemo.js" type="module"&gt;&lt;/script&gt;
+</code>
+</pre>
+
+<p>&nbsp;</p>
+
+@section Scripts
+{
+    <script src="~/assets/javascripts/modules/ModuleDemo.js" type="module"></script>
+}
