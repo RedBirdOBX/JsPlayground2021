@@ -1,0 +1,178 @@
+﻿@page
+
+@model JsPlayground.Pages.Javascript.Widgets.DailyEarningsClockModel
+
+@{
+    string pageId = "Daily Earnings Clock";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+@{
+    ViewData["Title"] = pageId;
+}
+
+@section LibraryHeader {JavaScript}
+@section BreadCrumbLibrary {javascript}
+@section BreadCrumbAnchor {js-widgets}
+@section BreadCrumbChapter {widgets}
+@section BreadCrumbPageName {@pageId.ToLower()}
+@section PageName {@pageId}
+
+<style>
+#ClockContainer
+{
+    font-family: sans-serif;
+    color: #fff;
+    display: inline-block;
+    font-weight: 100;
+    text-align: center;
+    font-size: 30px;
+}
+
+#ClockContainer > div
+{
+    padding: 10px;
+    border-radius: 3px;
+    background: #00BF96;
+    display: inline-block;
+}
+
+#ClockContainer div > span
+{
+    padding: 15px;
+    border-radius: 3px;
+    background: #00816A;
+    display: inline-block;
+}
+
+.smalltext
+{
+    padding-top: 5px;
+    font-size: 16px;
+}
+</style>
+
+<div class="row">
+    <div class="col-12">
+        <div class="text-center">
+            <div class="mb-5">
+                <div id="ClockContainer">
+                    <div>
+                        <span class="days"></span>
+                        <div class="smalltext">Days</div>
+                    </div>
+                    <div>
+                        <span class="hours"></span>
+                        <div class="smalltext">Hours</div>
+                    </div>
+                    <div>
+                        <span class="minutes"></span>
+                        <div class="smalltext">Minutes</div>
+                    </div>
+                    <div>
+                        <span class="seconds"></span>
+                        <div class="smalltext">Seconds</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="EarnedContainer">
+                <h3 class="text-center text-success"><span id="EarnedLabel"></span></h3>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<p>&nbsp;</p>
+
+@section Scripts
+{
+<script>
+    // https://www.sitepoint.com/build-javascript-countdown-timer-no-dependencies/
+
+    let deadline = BuildDeadline();
+    let earned = 0;
+    let earnedLabel = document.getElementById("EarnedLabel");
+
+    const annual = 112000;
+    const hourlyRate = annual / 52 / 40;
+    const secondlyRate = hourlyRate / 60 / 60;
+
+    InitializeClock('ClockContainer', deadline);
+
+    function BuildDeadline()
+    {
+        let deadline = new Date();
+        deadline.setHours(17);
+        deadline.setMinutes(00);
+        deadline.setSeconds(00);
+        deadline.setMilliseconds(00);
+        return deadline;
+    }
+
+    function InitializeClock(id, deadline)
+    {
+        const clock = document.getElementById(id);
+        const daysSpan = clock.querySelector('.days');
+        const hoursSpan = clock.querySelector('.hours');
+        const minutesSpan = clock.querySelector('.minutes');
+        const secondsSpan = clock.querySelector('.seconds');
+
+        function updateClock()
+        {
+            const t = GetTimeRemaining(deadline);
+            daysSpan.innerHTML = ('0' + t.days).slice(-2);
+            hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+            minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+            secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+            CalculateEarnings();
+
+            if (t.total <= 0)
+            {
+                clearInterval(timeinterval);
+
+            }
+        }
+
+        updateClock();
+        var timeinterval = setInterval(updateClock, 1000);
+    }
+
+    function GetTimeRemaining(endtime)
+    {
+        const total = Date.parse(endtime) - Date.parse(new Date());
+        const seconds = Math.floor((total / 1000) % 60);
+        const minutes = Math.floor((total / 1000 / 60) % 60);
+        const hours = Math.floor((total / (1000 * 60 * 60)) % 24);
+        const days = Math.floor(total / (1000 * 60 * 60 * 24));
+
+        return { total, days, hours, minutes, seconds };
+    }
+
+    function GetSecondsPassed(startTime)
+    {
+        return ((Date.parse(new Date()) - Date.parse(startTime)) / 1000);
+    }
+
+    function CalculateEarnings()
+    {
+        // how many seconds have passed between now and 8am?
+        let start = new Date();
+        start.setHours(8);
+        start.setMinutes(0);
+        start.setSeconds(0);
+        start.setMilliseconds(0);
+        secondsPassed = GetSecondsPassed(start);
+        earned = secondsPassed * secondlyRate;
+        earned = (earned < 430) ? earned : 430;
+        earnedLabel.innerHTML = FormatCurrency(earned);
+    }
+
+    function FormatCurrency(number) {
+        return number.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+    };
+
+</script>
+}
