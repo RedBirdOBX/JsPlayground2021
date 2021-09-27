@@ -1,0 +1,56 @@
+﻿@page
+
+@{
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+@{
+    ViewData["Title"] = "Converting UTC to Local";
+}
+
+@section LibraryHeader {JavaScript}
+@section BreadCrumbLibrary {javascript}
+@section BreadCrumbAnchor {js-dates}
+@section BreadCrumbChapter {dates}
+@section BreadCrumbPageName {converting utc to local}
+@section PageName {Converting UTC to Local}
+
+<p>
+    Say you have dates stored in UTC format but the users of your app are in different time zones.
+    You probably want to display the date formatted/converted for <string>their</string> time zone.
+    Here's an easy way to do that. The trick is to use the <code>getTimezoneOffset()</code> method
+    off the UTC date.
+</p>
+
+<p>&nbsp;</p>
+
+<div>
+    <div id="demo1"></div>
+    <div id="demo2"></div>
+</div>
+
+<p>&nbsp;</p>
+
+<pre>
+<code>
+let utcDate = new Date("2011-06-29 16:00:00.000");
+let localDate = new Date(utcDate.getTime() - utcDate.getTimezoneOffset() * 60 * 1000);
+document.getElementById("demo1").innerHTML = utcDate;
+document.getElementById("demo2").innerHTML = localDate;
+</code>
+</pre>
+
+<p>&nbsp;</p>
+
+
+@section Scripts
+{
+    <script>
+        // https://stackoverflow.com/questions/6525538/convert-utc-date-time-to-local-date-time
+
+        let utcDate = new Date("2011-06-29 16:00:00.000");
+        let localDate = new Date(utcDate.getTime() - utcDate.getTimezoneOffset() * 60 * 1000);
+        document.getElementById("demo1").innerHTML = utcDate;
+        document.getElementById("demo2").innerHTML = localDate;
+    </script>
+}

@@ -24,6 +24,31 @@
 
 <div class="my-5"></div>
 
+<p>
+    <strong>Date.toUTCString() / Date.toLocaleString() / </strong><br />
+    Return the time portion of a Date object as a string, using locale conventions.
+</p>
+
+<div class="card text-white bg-info mt-5">
+    <div class="card-body">
+        <div id="demo3"></div>
+        <div id="demo4"></div>
+        <div id="demo5"></div>
+    </div>
+</div>
+
+<pre>
+<code>
+let utcDate = new Date("2011-06-29T16:00:00.000z");
+document.getElementById("demo3").innerHTML = `utcDate: ${utcDate.toUTCString()}`;
+document.getElementById("demo4").innerHTML = `converted to local: ${utcDate.toLocaleString()}`;
+document.getElementById("demo5").innerHTML = `converted to utc: ${utcDate.toUTCString()}`;
+</code>
+</pre>
+
+
+<div class="my-5"></div>
+
 <div>
     <h4 class="text-center text-info"><span id="demo1"></span></h4>
 </div>
@@ -78,7 +103,11 @@ if (date2 < date1)
         if (date2 < date1) {
             message = "Lisa is older.";
         }
-
         document.getElementById("demo2").innerHTML = message;
+
+        let utcDate = new Date("2011-06-29T16:00:00.000z");
+        document.getElementById("demo3").innerHTML = `utcDate: ${utcDate.toUTCString()}`;
+        document.getElementById("demo4").innerHTML = `converted to local: ${utcDate.toLocaleString()}`;
+        document.getElementById("demo5").innerHTML = `converted to utc: ${utcDate.toUTCString()}`;
     </script>
 }
