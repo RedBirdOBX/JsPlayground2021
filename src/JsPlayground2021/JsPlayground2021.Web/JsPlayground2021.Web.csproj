@@ -8,10 +8,4 @@
     <None Remove="buildspec.yml" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Content Include="buildspec.yml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-
 </Project>
