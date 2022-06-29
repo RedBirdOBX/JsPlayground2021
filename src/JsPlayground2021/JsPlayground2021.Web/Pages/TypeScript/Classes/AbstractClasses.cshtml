@@ -4,7 +4,7 @@
 
 @{
     string pageId = "Basics";
-    Layout = "~/Pages/Shared/_Layout.cshtml";
+    Layout = "~/Pages/Shared/_PageLayout.cshtml";
 }
 
 @{
@@ -12,12 +12,12 @@
 }
 
 @section LibraryHeader {TypeScript}
-@section BreadCrumbLibrary {typescript}
-@section BreadCrumbAnchor {ts-classes}
-@section BreadCrumbChapter {classes}
-@section BreadCrumbPageName {@pageId.ToLower()}
 @section PageName {@pageId}
 
+@section Menu
+{
+    <partial name="_TypeScriptMenu" />
+}
 <p>
     Abstract classes are base classes from which other classes may be derived. They may <strong>not</strong> be instantiated directly.
     Unlike an interface, an abstract class <strong>may contain</strong> implementation details for its non-abstract members. The abstract keyword is used

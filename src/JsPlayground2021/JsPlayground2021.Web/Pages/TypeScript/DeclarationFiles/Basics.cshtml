@@ -4,7 +4,7 @@
 
 @{
     string pageId = "Basics";
-    Layout = "~/Pages/Shared/_Layout.cshtml";
+    Layout = "~/Pages/Shared/_PageLayout.cshtml";
 }
 
 @{
@@ -12,12 +12,12 @@
 }
 
 @section LibraryHeader {TypeScript}
-@section BreadCrumbLibrary {typescript}
-@section BreadCrumbAnchor {ts-declaration-files}
-@section BreadCrumbChapter {declaration files}
-@section BreadCrumbPageName {@pageId.ToLower()}
 @section PageName {@pageId}
 
+@section Menu
+{
+    <partial name="_TypeScriptMenu" />
+}
 <p>
     Sometimes ...quite often...we need to write code which refers to other libraries (jQuery, jQuery validation, etc…). We
     want to be able to pull in and use the Types from these other libraries but we don’t control those Types. This is done

@@ -4,7 +4,7 @@
 
 @{
     string pageId = "Instantiating New Objects";
-    Layout = "~/Pages/Shared/_Layout.cshtml";
+    Layout = "~/Pages/Shared/_PageLayout.cshtml";
 }
 
 @{
@@ -12,12 +12,12 @@
 }
 
 @section LibraryHeader {TypeScript}
-@section BreadCrumbLibrary {typescript}
-@section BreadCrumbAnchor {ts-classes}
-@section BreadCrumbChapter {classes}
-@section BreadCrumbPageName {@pageId.ToLower()}
 @section PageName {@pageId}
 
+@section Menu
+{
+    <partial name="_TypeScriptMenu" />
+}
 
 <p>
     Notice the difference here. Method 1 is standard.  Method 2 differs a little that it would from c#.
