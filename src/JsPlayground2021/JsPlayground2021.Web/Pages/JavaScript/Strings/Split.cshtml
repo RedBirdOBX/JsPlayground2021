@@ -4,7 +4,7 @@
 
 @{
     string pageId = "Split";
-    Layout = "~/Pages/Shared/_Layout.cshtml";
+    Layout = "~/Pages/Shared/_PageLayout.cshtml";
 }
 
 @{
@@ -12,11 +12,12 @@
 }
 
 @section LibraryHeader {JavaScript}
-@section BreadCrumbLibrary {javascript}
-@section BreadCrumbAnchor {js-strings}
-@section BreadCrumbChapter {strings}
-@section BreadCrumbPageName {@pageId.ToLower()}
 @section PageName {@pageId}
+
+@section Menu
+{
+    <partial name="_JavaScriptMenu" />
+}
 
 <p>
     A string can be converted to an array with the <code>split()</code> method. If the separator is omitted, the returned array will

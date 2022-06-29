@@ -2,7 +2,7 @@
 @using JsPlayground.Pages.Javascript.Basics
 
 @{
-    Layout = "~/Pages/Shared/_Layout.cshtml";
+    Layout = "~/Pages/Shared/_PageLayout.cshtml";
 }
 
 @{
@@ -10,11 +10,12 @@
 }
 
 @section LibraryHeader {JavaScript}
-@section BreadCrumbLibrary {javascript}
-@section BreadCrumbAnchor {js-basics}
-@section BreadCrumbChapter {basics}
-@section BreadCrumbPageName {basics}
 @section PageName {Basics}
+
+@section Menu
+{
+    <partial name="_JavaScriptMenu" />
+}
 
 <ul>
     <li>Prototypical Inheritance instead of Classes</li>

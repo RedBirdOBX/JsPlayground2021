@@ -4,7 +4,7 @@
 
 @{
     string pageId = "Number";
-    Layout = "~/Pages/Shared/_Layout.cshtml";
+    Layout = "~/Pages/Shared/_PageLayout.cshtml";
 }
 
 @{
@@ -12,11 +12,12 @@
 }
 
 @section LibraryHeader {JavaScript}
-@section BreadCrumbLibrary {javascript}
-@section BreadCrumbAnchor {js-types}
-@section BreadCrumbChapter {types}
-@section BreadCrumbPageName {@pageId.ToLower()}
 @section PageName {@pageId}
+
+@section Menu
+{
+    <partial name="_JavaScriptMenu" />
+}
 
 <p>
     JavaScript has only one type of number. JavaScript numbers can be written with, or without decimals.

@@ -1,7 +1,7 @@
 ﻿@page
 
 @{
-    Layout = "~/Pages/Shared/_Layout.cshtml";
+    Layout = "~/Pages/Shared/_PageLayout.cshtml";
 }
 
 @{
@@ -9,11 +9,12 @@
 }
 
 @section LibraryHeader {JavaScript}
-@section BreadCrumbLibrary {javascript}
-@section BreadCrumbAnchor {js-dom-events}
-@section BreadCrumbChapter {dom events}
-@section BreadCrumbPageName {onclick vs click}
 @section PageName {OnClick vs Click}
+
+@section Menu
+{
+    <partial name="_JavaScriptMenu" />
+}
 
 <p>
     When adding and event using <code>addEventListener()</code>, you <strong>do not</strong> use the "on" prefix.

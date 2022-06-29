@@ -4,7 +4,7 @@
 
 @{
     string pageId = "Stringify";
-    Layout = "~/Pages/Shared/_Layout.cshtml";
+    Layout = "~/Pages/Shared/_PageLayout.cshtml";
 }
 
 @{
@@ -12,11 +12,12 @@
 }
 
 @section LibraryHeader {JavaScript}
-@section BreadCrumbLibrary {javascript}
-@section BreadCrumbAnchor {js-json}
-@section BreadCrumbChapter {json}
-@section BreadCrumbPageName {@pageId.ToLower()}
 @section PageName {@pageId}
+
+@section Menu
+{
+    <partial name="_JavaScriptMenu" />
+}
 
 <p>
     To create a JSON Object FROM text or a string (usually from another source, we can use the JSON.parse method. The

@@ -1,7 +1,7 @@
 ﻿@page
 
 @{
-    Layout = "~/Pages/Shared/_Layout.cshtml";
+    Layout = "~/Pages/Shared/_PageLayout.cshtml";
 }
 
 @{
@@ -9,11 +9,12 @@
 }
 
 @section LibraryHeader {JavaScript}
-@section BreadCrumbLibrary {javascript}
-@section BreadCrumbAnchor {js-dom-events}
-@section BreadCrumbChapter {dom events}
-@section BreadCrumbPageName {onmouseup / onmousedown}
 @section PageName {OnMouseup / OnMousedown}
+
+@section Menu
+{
+    <partial name="_JavaScriptMenu" />
+}
 
 <p>
     The mousedown, mouseup and onclick events are all parts of a mouse-click. First when a mouse-button is clicked, the

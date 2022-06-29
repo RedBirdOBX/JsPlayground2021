@@ -1,7 +1,7 @@
 ﻿@page
 
 @{
-    Layout = "~/Pages/Shared/_Layout.cshtml";
+    Layout = "~/Pages/Shared/_PageLayout.cshtml";
 }
 
 @{
@@ -9,11 +9,12 @@
 }
 
 @section LibraryHeader {JavaScript}
-@section BreadCrumbLibrary {javascript}
-@section BreadCrumbAnchor {js-dom-events}
-@section BreadCrumbChapter {dom events}
-@section BreadCrumbPageName {onmouseover / onmouseout}
 @section PageName {OnMouseover / OnMouseout}
+
+@section Menu
+{
+    <partial name="_JavaScriptMenu" />
+}
 
 <p>
     The <code>mouseover</code> and <code>mouseout</code> events can be used to trigger a function when the user mouses over, or out of, an HTML

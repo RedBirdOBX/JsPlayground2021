@@ -2,7 +2,7 @@
 
 @{
     string pageId = "Get Element By Id";
-    Layout = "~/Pages/Shared/_Layout.cshtml";
+    Layout = "~/Pages/Shared/_PageLayout.cshtml";
 }
 
 @{
@@ -12,11 +12,12 @@
 @model JsPlayground.Pages.Javascript.DOMMethods.GetElementByIdModel
 
 @section LibraryHeader {JavaScript}
-@section BreadCrumbLibrary {javascript}
-@section BreadCrumbAnchor {js-dom-methods}
-@section BreadCrumbChapter {dom methods}
-@section BreadCrumbPageName {@pageId.ToLower()}
 @section PageName {@pageId}
+
+@section Menu
+{
+    <partial name="_JavaScriptMenu" />
+}
 
 <p>
     The <code>getElementById()</code> is a popular DOM method to get an HTML element object. It is a method of the document object.

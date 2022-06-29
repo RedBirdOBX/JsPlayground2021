@@ -4,7 +4,7 @@
 @model ValidationAPIModel
 
 @{
-    Layout = "~/Pages/Shared/_Layout.cshtml";
+    Layout = "~/Pages/Shared/_PageLayout.cshtml";
 }
 
 @{
@@ -12,11 +12,12 @@
 }
 
 @section LibraryHeader {JavaScript}
-@section BreadCrumbLibrary {javascript}
-@section BreadCrumbAnchor {js-api}
-@section BreadCrumbChapter {api}
-@section BreadCrumbPageName {validation api}
 @section PageName {Validation API}
+
+@section Menu
+{
+    <partial name="_JavaScriptMenu" />
+}
 
 
 <p>

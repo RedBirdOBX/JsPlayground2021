@@ -2,7 +2,7 @@
 @using JsPlayground.Pages.Javascript.Basics
 
 @{
-    Layout = "~/Pages/Shared/_Layout.cshtml";
+    Layout = "~/Pages/Shared/_PageLayout.cshtml";
 }
 
 @{
@@ -10,11 +10,12 @@
 }
 
 @section LibraryHeader {JavaScript}
-@section BreadCrumbLibrary {javascript}
-@section BreadCrumbAnchor {js-basics}
-@section BreadCrumbChapter {basics}
-@section BreadCrumbPageName {defer}
 @section PageName {Defer}
+
+@section Menu
+{
+    <partial name="_JavaScriptMenu" />
+}
 
 <p>
     Sometimes you will have an issue where the page with throw an error because it is trying reference an element in a

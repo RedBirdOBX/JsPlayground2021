@@ -3,7 +3,7 @@
 @model JsPlayground.Pages.Javascript.Animation.BasicExampleModel
 
 @{
-    Layout = "~/Pages/Shared/_Layout.cshtml";
+    Layout = "~/Pages/Shared/_PageLayout.cshtml";
 }
 
 @{
@@ -11,11 +11,12 @@
 }
 
 @section LibraryHeader {JavaScript}
-@section BreadCrumbLibrary {javascript}
-@section BreadCrumbAnchor {js-animations}
-@section BreadCrumbChapter {animations}
-@section BreadCrumbPageName {basic example}
 @section PageName {Basic Example}
+
+@section Menu
+{
+    <partial name="_JavaScriptMenu" />
+}
 
 <p>
     To demonstrate how to create HTML animations with JavaScript, we need a container element. All animations should be

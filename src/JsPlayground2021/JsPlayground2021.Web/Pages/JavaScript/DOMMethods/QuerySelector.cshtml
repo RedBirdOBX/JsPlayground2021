@@ -2,7 +2,7 @@
 
 @{
     string pageId = "Query Selector";
-    Layout = "~/Pages/Shared/_Layout.cshtml";
+    Layout = "~/Pages/Shared/_PageLayout.cshtml";
 }
 
 @{
@@ -12,11 +12,12 @@
 @model JsPlayground.Pages.Javascript.DOMMethods.QuerySelectorModel
 
 @section LibraryHeader {JavaScript}
-@section BreadCrumbLibrary {javascript}
-@section BreadCrumbAnchor {js-dom-methods}
-@section BreadCrumbChapter {dom methods}
-@section BreadCrumbPageName {@pageId.ToLower()}
 @section PageName {@pageId}
+
+@section Menu
+{
+    <partial name="_JavaScriptMenu" />
+}
 
 <p>
     In addition to using a getElementsById/TagName/Class method, you can use the <code>querySelectorAll</code> method.

@@ -4,7 +4,7 @@
 @model ValidationAPIExample2Model
 
 @{
-    Layout = "~/Pages/Shared/_Layout.cshtml";
+    Layout = "~/Pages/Shared/_PageLayout.cshtml";
 }
 
 @{
@@ -12,11 +12,12 @@
 }
 
 @section LibraryHeader {JavaScript}
-@section BreadCrumbLibrary {javascript}
-@section BreadCrumbAnchor {js-api}
-@section BreadCrumbChapter {api}
-@section BreadCrumbPageName {validation api example}
 @section PageName {Validation API Example}
+
+@section Menu
+{
+    <partial name="_JavaScriptMenu" />
+}
 
 <p>You also chose to use some of the <strong>validity properties</strong> to test against.</p>
 

@@ -1,7 +1,7 @@
 ﻿@page
 
 @{
-    Layout = "~/Pages/Shared/_Layout.cshtml";
+    Layout = "~/Pages/Shared/_PageLayout.cshtml";
 }
 
 @{
@@ -11,11 +11,12 @@
 @model JsPlayground.Pages.Javascript.DOMMethods.DocumentReadyModel
 
 @section LibraryHeader {JavaScript}
-@section BreadCrumbLibrary {javascript}
-@section BreadCrumbAnchor {js-dom-methods}
-@section BreadCrumbChapter {dom methods}
-@section BreadCrumbPageName {Document Ready}
 @section PageName {Document Ready}
+
+@section Menu
+{
+    <partial name="_JavaScriptMenu" />
+}
 
 <p>
     There is no <code>document.ready</code> out of the box method from javascript like jQuery offers. You can however, use one of the
