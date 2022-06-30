@@ -4,7 +4,7 @@
 
 @{
     string pageId = "Class Properties";
-    Layout = "~/Pages/Shared/_Layout.cshtml";
+    Layout = "~/Pages/Shared/_PageLayout.cshtml";
 }
 
 @{
@@ -12,12 +12,12 @@
 }
 
 @section LibraryHeader {TypeScript}
-@section BreadCrumbLibrary {typescript}
-@section BreadCrumbAnchor {ts-classes}
-@section BreadCrumbChapter {classes}
-@section BreadCrumbPageName {@pageId.ToLower()}
 @section PageName {@pageId}
 
+@section Menu
+{
+    <partial name="_TypeScriptMenu" />
+}
 
 <p>
     In TypeScript, properties can look more like c# fully-implemented properties. Notice in the Constructor, we do NOT get the private

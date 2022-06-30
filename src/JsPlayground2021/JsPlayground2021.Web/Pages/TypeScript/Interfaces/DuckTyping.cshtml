@@ -4,7 +4,7 @@
 
 @{
     string pageId = "Duck Typing";
-    Layout = "~/Pages/Shared/_Layout.cshtml";
+    Layout = "~/Pages/Shared/_PageLayout.cshtml";
 }
 
 @{
@@ -12,13 +12,12 @@
 }
 
 @section LibraryHeader {TypeScript}
-@section BreadCrumbLibrary {typescript}
-@section BreadCrumbAnchor {ts-interfaces}
-@section BreadCrumbChapter {interfaces}
-@section BreadCrumbPageName {@pageId.ToLower()}
 @section PageName {@pageId}
 
-
+@section Menu
+{
+    <partial name="_TypeScriptMenu" />
+}
 
 <h5 class="my-3 text-info text-center">
     Tip: Interfaces cannot be directly instantiated. They can however, used to define a Type.

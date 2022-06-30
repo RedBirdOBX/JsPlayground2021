@@ -4,7 +4,7 @@
 
 @{
     string pageId = "External Reference Example";
-    Layout = "~/Pages/Shared/_Layout.cshtml";
+    Layout = "~/Pages/Shared/_PageLayout.cshtml";
 }
 
 @{
@@ -12,11 +12,12 @@
 }
 
 @section LibraryHeader {TypeScript}
-@section BreadCrumbLibrary {typescript}
-@section BreadCrumbAnchor {ts-reference}
-@section BreadCrumbChapter {reference files}
-@section BreadCrumbPageName {@pageId.ToLower()}
 @section PageName {@pageId}
+
+@section Menu
+{
+    <partial name="_TypeScriptMenu" />
+}
 
 <p>
     Often you will want to reference code/classes in other files.  In order to do this, you will need to

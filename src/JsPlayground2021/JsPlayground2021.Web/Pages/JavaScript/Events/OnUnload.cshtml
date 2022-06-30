@@ -1,7 +1,7 @@
 ﻿@page
 
 @{
-    Layout = "~/Pages/Shared/_Layout.cshtml";
+    Layout = "~/Pages/Shared/_PageLayout.cshtml";
 }
 
 @{
@@ -9,11 +9,12 @@
 }
 
 @section LibraryHeader {JavaScript}
-@section BreadCrumbLibrary {javascript}
-@section BreadCrumbAnchor {js-dom-events}
-@section BreadCrumbChapter {dom events}
-@section BreadCrumbPageName {onunload}
 @section PageName {OnUnload}
+
+@section Menu
+{
+    <partial name="_JavaScriptMenu" />
+}
 
 <p>
     Here is an example of using the <code>unload</code> event. This is a method of the document object and is triggered when the page

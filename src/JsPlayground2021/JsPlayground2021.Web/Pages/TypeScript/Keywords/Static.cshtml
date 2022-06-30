@@ -4,7 +4,7 @@
 
 @{
     string pageId = "static";
-    Layout = "~/Pages/Shared/_Layout.cshtml";
+    Layout = "~/Pages/Shared/_PageLayout.cshtml";
 }
 
 @{
@@ -12,12 +12,12 @@
 }
 
 @section LibraryHeader {TypeScript}
-@section BreadCrumbLibrary {typescript}
-@section BreadCrumbAnchor {ts-keywords}
-@section BreadCrumbChapter {keywords}
-@section BreadCrumbPageName {@pageId.ToLower()}
 @section PageName {@pageId}
 
+@section Menu
+{
+    <partial name="_TypeScriptMenu" />
+}
 
 <p>
     In TypeScript, you <strong>cannot</strong> define an entire class as <code>static</code> but you can however define it's members.

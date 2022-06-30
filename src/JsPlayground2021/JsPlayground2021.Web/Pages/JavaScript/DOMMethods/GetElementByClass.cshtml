@@ -2,7 +2,7 @@
 
 @{
     string pageId = "Get Element By Class";
-    Layout = "~/Pages/Shared/_Layout.cshtml";
+    Layout = "~/Pages/Shared/_PageLayout.cshtml";
 }
 
 @{
@@ -12,11 +12,12 @@
 @model JsPlayground.Pages.Javascript.DOMMethods.GetElementByClassModel
 
 @section LibraryHeader {JavaScript}
-@section BreadCrumbLibrary {javascript}
-@section BreadCrumbAnchor {js-dom-methods}
-@section BreadCrumbChapter {dom methods}
-@section BreadCrumbPageName {@pageId.ToLower()}
 @section PageName {@pageId}
+
+@section Menu
+{
+    <partial name="_JavaScriptMenu" />
+}
 
 <p>
     When you use the <code>getElementsByClassName()</code> method, will get a list(array) of all the elements with that matching CSS class.

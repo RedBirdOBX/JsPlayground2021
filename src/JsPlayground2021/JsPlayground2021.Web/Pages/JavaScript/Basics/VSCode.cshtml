@@ -2,7 +2,7 @@
 @using JsPlayground.Pages.Javascript.Basics
 
 @{
-    Layout = "~/Pages/Shared/_Layout.cshtml";
+    Layout = "~/Pages/Shared/_PageLayout.cshtml";
 }
 
 @{
@@ -10,12 +10,12 @@
 }
 
 @section LibraryHeader {JavaScript}
-@section BreadCrumbLibrary {javascript}
-@section BreadCrumbAnchor {js-basics}
-@section BreadCrumbChapter {basics}
-@section BreadCrumbPageName {vs code}
 @section PageName {VS Code}
 
+@section Menu
+{
+    <partial name="_JavaScriptMenu" />
+}
 <p>
     VS Code is our favorite IDE (so far) for front-end development. Make sure you have these helpful
     extensions installed.

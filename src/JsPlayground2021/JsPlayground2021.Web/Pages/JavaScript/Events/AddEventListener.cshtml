@@ -1,7 +1,7 @@
 ﻿@page
 
 @{
-    Layout = "~/Pages/Shared/_Layout.cshtml";
+    Layout = "~/Pages/Shared/_PageLayout.cshtml";
 }
 
 @{
@@ -9,11 +9,12 @@
 }
 
 @section LibraryHeader {JavaScript}
-@section BreadCrumbLibrary {javascript}
-@section BreadCrumbAnchor {js-dom-events}
-@section BreadCrumbChapter {dom events}
-@section BreadCrumbPageName {add event listener}
 @section PageName {Add Event Listener}
+
+@section Menu
+{
+    <partial name="_JavaScriptMenu" />
+}
 
 <p>
     The <code>addEventListener()</code> method attaches an event handler to the specified element. The <code>addEventListener()</code> method

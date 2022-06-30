@@ -2,7 +2,7 @@
 @using JsPlayground.Pages.Javascript.Basics
 
 @{
-    Layout = "~/Pages/Shared/_Layout.cshtml";
+    Layout = "~/Pages/Shared/_PageLayout.cshtml";
 }
 
 @{
@@ -10,12 +10,12 @@
 }
 
 @section LibraryHeader {JavaScript}
-@section BreadCrumbLibrary {javascript}
-@section BreadCrumbAnchor {js-basics}
-@section BreadCrumbChapter {basics}
-@section BreadCrumbPageName {valueOf()}
 @section PageName {valueOf()}
 
+@section Menu
+{
+    <partial name="_JavaScriptMenu" />
+}
 <p>
     The <code>valueOf()</code> method is the default behavior for an array. It converts an array to a primitive value. JavaScript will
     automatically convert an array to a string when a primitive value is expected. Because of this, all these examples will

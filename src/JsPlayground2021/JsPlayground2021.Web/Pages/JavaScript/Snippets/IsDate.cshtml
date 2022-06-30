@@ -4,7 +4,7 @@
 
 @{
     string pageId = "IsDate";
-    Layout = "~/Pages/Shared/_Layout.cshtml";
+    Layout = "~/Pages/Shared/_PageLayout.cshtml";
 }
 
 @{
@@ -12,11 +12,12 @@
 }
 
 @section LibraryHeader {JavaScript}
-@section BreadCrumbLibrary {javascript}
-@section BreadCrumbAnchor {js-snippets}
-@section BreadCrumbChapter {snippets}
-@section BreadCrumbPageName {@pageId.ToLower()}
 @section PageName {@pageId}
+
+@section Menu
+{
+    <partial name="_JavaScriptMenu" />
+}
 
 <p>Good snippet to see if string is a valid date.  Returns <code>bool</code>.</p>
 <div class="card text-white bg-info mt-5">

@@ -4,7 +4,7 @@
 
 @{
     string pageId = "prop()";
-    Layout = "~/Pages/Shared/_Layout.cshtml";
+    Layout = "~/Pages/Shared/_PageLayout.cshtml";
 }
 
 @{
@@ -12,12 +12,12 @@
 }
 
 @section LibraryHeader {jQuery}
-@section BreadCrumbLibrary {jquery}
-@section BreadCrumbAnchor {jq-dom}
-@section BreadCrumbChapter {dom}
-@section BreadCrumbPageName {@pageId.ToLower()}
 @section PageName {@pageId}
 
+@section Menu
+{
+    <partial name="_JQueryMenu" />
+}
 
 <p>The <code>prop()</code> method sets or returns properties and values of the selected elements.</p>
 

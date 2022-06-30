@@ -4,7 +4,7 @@
 
 @{
     string pageId = "toggle()";
-    Layout = "~/Pages/Shared/_Layout.cshtml";
+    Layout = "~/Pages/Shared/_PageLayout.cshtml";
 }
 
 @{
@@ -12,12 +12,12 @@
 }
 
 @section LibraryHeader {jQuery}
-@section BreadCrumbLibrary {jquery}
-@section BreadCrumbAnchor {jq-effects}
-@section BreadCrumbChapter {effects}
-@section BreadCrumbPageName {@pageId.ToLower()}
 @section PageName {@pageId}
 
+@section Menu
+{
+    <partial name="_JQueryMenu" />
+}
 
 <p>
     With jQuery, you can toggle between the hide() and show() methods with the <code>toggle()</code> method.

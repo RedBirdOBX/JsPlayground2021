@@ -2,7 +2,7 @@
 @using JsPlayground.Pages.Javascript.DOMElements
 
 @{
-    Layout = "~/Pages/Shared/_Layout.cshtml";
+    Layout = "~/Pages/Shared/_PageLayout.cshtml";
 }
 
 @{
@@ -12,11 +12,12 @@
 @model AccessingElementModel
 
 @section LibraryHeader {JavaScript}
-@section BreadCrumbLibrary {javascript}
-@section BreadCrumbAnchor {js-dom-elements}
-@section BreadCrumbChapter {dom elements}
-@section BreadCrumbPageName {accessing}
 @section PageName {Accessing DOM Elements}
+
+@section Menu
+{
+    <partial name="_JavaScriptMenu" />
+}
 
 <p>
     The HTML DOM (<code>Document Object Model</code>) is the owner of all other objects in your web page.

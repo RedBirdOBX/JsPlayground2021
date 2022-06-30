@@ -4,7 +4,7 @@
 
 @{
     string pageId = "Equal Division Challenge";
-    Layout = "~/Pages/Shared/_Layout.cshtml";
+    Layout = "~/Pages/Shared/_PageLayout.cshtml";
 }
 
 @{
@@ -12,12 +12,12 @@
 }
 
 @section LibraryHeader {TypeScript}
-@section BreadCrumbLibrary {typescript}
-@section BreadCrumbAnchor {ts-challenges}
-@section BreadCrumbChapter {challenges}
-@section BreadCrumbPageName {@pageId.ToLower()}
 @section PageName {@pageId}
 
+@section Menu
+{
+    <partial name="_TypeScriptMenu" />
+}
 <p>
     Here are three examples of how to take a list and divide them up into 2 buckets as equally as possible.
     Each test increases in it's complexity.

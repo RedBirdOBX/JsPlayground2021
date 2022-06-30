@@ -2,7 +2,7 @@
 
 @{
     string pageId = "Get Element By Tag Name";
-    Layout = "~/Pages/Shared/_Layout.cshtml";
+    Layout = "~/Pages/Shared/_PageLayout.cshtml";
 }
 
 @{
@@ -12,11 +12,12 @@
 @model JsPlayground.Pages.Javascript.DOMMethods.GetElementByTagModel
 
 @section LibraryHeader {JavaScript}
-@section BreadCrumbLibrary {javascript}
-@section BreadCrumbAnchor {js-dom-methods}
-@section BreadCrumbChapter {dom methods}
-@section BreadCrumbPageName {@pageId.ToLower()}
 @section PageName {@pageId}
+
+@section Menu
+{
+    <partial name="_JavaScriptMenu" />
+}
 
 <p>
     When you use the <code>getElementByTagName()</code> method, will get a list(array) of all the elements of that tag TYPE. You're

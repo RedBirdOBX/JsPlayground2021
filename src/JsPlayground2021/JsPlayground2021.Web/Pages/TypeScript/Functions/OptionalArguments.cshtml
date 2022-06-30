@@ -4,7 +4,7 @@
 
 @{
     string pageId = "Optional Arguments";
-    Layout = "~/Pages/Shared/_Layout.cshtml";
+    Layout = "~/Pages/Shared/_PageLayout.cshtml";
 }
 
 @{
@@ -12,11 +12,12 @@
 }
 
 @section LibraryHeader {TypeScript}
-@section BreadCrumbLibrary {typescript}
-@section BreadCrumbAnchor {ts-functions}
-@section BreadCrumbChapter {functions}
-@section BreadCrumbPageName {@pageId.ToLower()}
 @section PageName {@pageId}
+
+@section Menu
+{
+    <partial name="_TypeScriptMenu" />
+}
 
 <p class="mt-5">
     By using a <code>?</code> to define an argument, you make it optional (nullable). x & y are required but z is not.

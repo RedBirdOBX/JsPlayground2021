@@ -4,7 +4,7 @@
 
 @{
     string pageId = "Break";
-    Layout = "~/Pages/Shared/_Layout.cshtml";
+    Layout = "~/Pages/Shared/_PageLayout.cshtml";
 }
 
 @{
@@ -12,11 +12,12 @@
 }
 
 @section LibraryHeader {TypeScript}
-@section BreadCrumbLibrary {typescript}
-@section BreadCrumbAnchor {ts-flow-control}
-@section BreadCrumbChapter {flow control}
-@section BreadCrumbPageName {@pageId.ToLower()}
 @section PageName {@pageId}
+
+@section Menu
+{
+    <partial name="_TypeScriptMenu" />
+}
 
 <p>
     The <code>break</code> statement "jumps out" of a loop or a conditional test such as a <code>switch/case</code> statement.

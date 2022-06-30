@@ -1,0 +1,33 @@
+﻿@page
+
+@model JsPlayground.Pages.Javascript.JQueryIndex
+
+@{
+    string pageId = "jQuery";
+    Layout = "~/Pages/Shared/_PageLayout.cshtml";
+}
+
+@{
+    ViewData["Title"] = pageId;
+}
+
+@section LibraryHeader {JavaScript}
+@section PageName {@pageId}
+
+@section Menu
+{
+    <partial name="_JQueryMenu" />
+}
+<div class="row">
+    <div class="col-12">
+        <div class="d-flex justify-content-center">
+            <img src="assets/images/jquery-logo.png" class="max-w-d-200px" />
+        </div>
+    </div>
+</div>
+
+<p>&nbsp;</p>
+
+@section Scripts
+{
+}

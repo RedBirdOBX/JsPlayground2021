@@ -2,7 +2,7 @@
 @using JsPlayground.Pages.Javascript.Basics
 
 @{
-    Layout = "~/Pages/Shared/_Layout.cshtml";
+    Layout = "~/Pages/Shared/_PageLayout.cshtml";
 }
 
 @{
@@ -10,12 +10,12 @@
 }
 
 @section LibraryHeader {JavaScript}
-@section BreadCrumbLibrary {javascript}
-@section BreadCrumbAnchor {js-basics}
-@section BreadCrumbChapter {basics}
-@section BreadCrumbPageName {ternary)}
 @section PageName {Ternary Operator}
 
+@section Menu
+{
+    <partial name="_JavaScriptMenu" />
+}
 <p>
     A ternary operator is a conditional operator that assigns a value to a variable based on some condition. This works
     just like an if, else statement and is great for value assignments.  You can only assign values, you cannot have blocks

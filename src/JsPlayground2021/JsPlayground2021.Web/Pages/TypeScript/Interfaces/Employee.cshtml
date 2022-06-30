@@ -4,7 +4,7 @@
 
 @{
     string pageId = "Employee Interface Demo";
-    Layout = "~/Pages/Shared/_Layout.cshtml";
+    Layout = "~/Pages/Shared/_PageLayout.cshtml";
 }
 
 @{
@@ -12,11 +12,12 @@
 }
 
 @section LibraryHeader {TypeScript}
-@section BreadCrumbLibrary {typescript}
-@section BreadCrumbAnchor {ts-interfaces}
-@section BreadCrumbChapter {interfaces}
-@section BreadCrumbPageName {@pageId.ToLower()}
 @section PageName {@pageId}
+
+@section Menu
+{
+    <partial name="_TypeScriptMenu" />
+}
 
 <p>This is a good example of how to use an interface.  Like c#, it helps establish a contract.  Notice that:</p>
 

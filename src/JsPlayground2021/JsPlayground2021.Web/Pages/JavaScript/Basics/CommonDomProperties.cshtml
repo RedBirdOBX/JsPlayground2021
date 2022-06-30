@@ -1,7 +1,7 @@
 ﻿@page
 
 @{
-    Layout = "~/Pages/Shared/_Layout.cshtml";
+    Layout = "~/Pages/Shared/_PageLayout.cshtml";
 }
 
 @{
@@ -9,11 +9,12 @@
 }
 
 @section LibraryHeader {JavaScript}
-@section BreadCrumbLibrary {javascript}
-@section BreadCrumbAnchor {js-basics}
-@section BreadCrumbChapter {basics}
-@section BreadCrumbPageName {common dom properties}
 @section PageName {Common DOM Properties}
+
+@section Menu
+{
+    <partial name="_JavaScriptMenu" />
+}
 
 <p>Notice that you can (just like with jQuery), grab a element and manipulate it.</p>
 

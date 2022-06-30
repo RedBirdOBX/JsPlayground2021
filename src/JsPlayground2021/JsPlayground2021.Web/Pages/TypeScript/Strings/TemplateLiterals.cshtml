@@ -4,7 +4,7 @@
 
 @{
     string pageId = "Template Literals";
-    Layout = "~/Pages/Shared/_Layout.cshtml";
+    Layout = "~/Pages/Shared/_PageLayout.cshtml";
 }
 
 @{
@@ -12,12 +12,12 @@
 }
 
 @section LibraryHeader {TypeScript}
-@section BreadCrumbLibrary {typescript}
-@section BreadCrumbAnchor {ts-strings}
-@section BreadCrumbChapter {strings}
-@section BreadCrumbPageName {@pageId.ToLower()}
 @section PageName {@pageId}
 
+@section Menu
+{
+    <partial name="_TypeScriptMenu" />
+}
 
 <p>Introduced with JavaScript ECMA 2015 ("6"). Works just like c# string interpolations.</p>
 

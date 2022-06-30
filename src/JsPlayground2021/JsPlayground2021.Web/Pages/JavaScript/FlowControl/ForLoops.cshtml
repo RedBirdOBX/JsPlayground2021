@@ -1,7 +1,7 @@
 ﻿@page
 
 @{
-    Layout = "~/Pages/Shared/_Layout.cshtml";
+    Layout = "~/Pages/Shared/_PageLayout.cshtml";
 }
 
 @{
@@ -9,11 +9,12 @@
 }
 
 @section LibraryHeader {JavaScript}
-@section BreadCrumbLibrary {javascript}
-@section BreadCrumbAnchor {js-flow-control}
-@section BreadCrumbChapter {flow control}
-@section BreadCrumbPageName {for loops}
 @section PageName {for loops}
+
+@section Menu
+{
+    <partial name="_JavaScriptMenu" />
+}
 
 <h4>for</h4>
 <p><code>for</code> loops loop thru a block of code n number of times.</p>

@@ -4,7 +4,7 @@
 
 @{
     string pageId = "mouseUp() / mouseDown()";
-    Layout = "~/Pages/Shared/_Layout.cshtml";
+    Layout = "~/Pages/Shared/_PageLayout.cshtml";
 }
 
 @{
@@ -12,12 +12,12 @@
 }
 
 @section LibraryHeader {jQuery}
-@section BreadCrumbLibrary {jquery}
-@section BreadCrumbAnchor {jq-events}
-@section BreadCrumbChapter {events}
-@section BreadCrumbPageName {@pageId.ToLower()}
 @section PageName {@pageId}
 
+@section Menu
+{
+    <partial name="_JQueryMenu" />
+}
 
 <p>
     The jQuery <code>mousedown()</code> and <code>mouseup()</code> events automatically wired up an (anonymous) function to the

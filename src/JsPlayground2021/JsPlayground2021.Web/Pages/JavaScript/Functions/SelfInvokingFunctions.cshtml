@@ -5,7 +5,7 @@
 
 @{
     string pageId = "Self Invoking Functions";
-    Layout = "~/Pages/Shared/_Layout.cshtml";
+    Layout = "~/Pages/Shared/_PageLayout.cshtml";
 }
 
 @{
@@ -13,11 +13,12 @@
 }
 
 @section LibraryHeader {JavaScript}
-@section BreadCrumbLibrary {javascript}
-@section BreadCrumbAnchor {js-functions}
-@section BreadCrumbChapter {functions}
-@section BreadCrumbPageName {@pageId.ToLower()}
 @section PageName {@pageId}
+
+@section Menu
+{
+    <partial name="_JavaScriptMenu" />
+}
 
 <p>
     Function expressions can be made "self-invoking". A self-invoking expression is invoked (started) automatically, without

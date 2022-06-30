@@ -2,7 +2,7 @@
 @using JsPlayground.Pages.Javascript.Challenges
 
 @{
-    Layout = "~/Pages/Shared/_Layout.cshtml";
+    Layout = "~/Pages/Shared/_PageLayout.cshtml";
 }
 
 @{
@@ -10,12 +10,12 @@
 }
 
 @section LibraryHeader {JavaScript}
-@section BreadCrumbLibrary {javascript}
-@section BreadCrumbAnchor {js-challenges}
-@section BreadCrumbChapter {challenges}
-@section BreadCrumbPageName {even numbers}
 @section PageName {Even Numbers Challenges}
 
+@section Menu
+{
+    <partial name="_JavaScriptMenu" />
+}
 <ul>
     <li>Prototypical Inheritance instead of Classes</li>
     <li>Not type-less but dynamically typed</li>

@@ -4,7 +4,7 @@
 
 @{
     string pageId = "CountDown (new)";
-    Layout = "~/Pages/Shared/_Layout.cshtml";
+    Layout = "~/Pages/Shared/_PageLayout.cshtml";
 }
 
 @{
@@ -12,12 +12,12 @@
 }
 
 @section LibraryHeader {jQuery}
-@section BreadCrumbLibrary {jquery}
-@section BreadCrumbAnchor {jq-plugins}
-@section BreadCrumbChapter {plugins}
-@section BreadCrumbPageName {@pageId.ToLower()}
 @section PageName {@pageId}
 
+@section Menu
+{
+    <partial name="_JQueryMenu" />
+}
 
 <link href="/assets/css/theme.css" rel="stylesheet" />
 

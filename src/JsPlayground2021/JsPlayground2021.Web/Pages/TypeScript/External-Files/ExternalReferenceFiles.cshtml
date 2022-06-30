@@ -4,7 +4,7 @@
 
 @{
     string pageId = "External Reference Files";
-    Layout = "~/Pages/Shared/_Layout.cshtml";
+    Layout = "~/Pages/Shared/_PageLayout.cshtml";
 }
 
 @{
@@ -12,12 +12,12 @@
 }
 
 @section LibraryHeader {TypeScript}
-@section BreadCrumbLibrary {typescript}
-@section BreadCrumbAnchor {ts-external-files}
-@section BreadCrumbChapter {external files}
-@section BreadCrumbPageName {@pageId.ToLower()}
 @section PageName {@pageId}
 
+@section Menu
+{
+    <partial name="_TypeScriptMenu" />
+}
 <p>
     Often, you need to reference classes in other files (see Ambient Declarations). To do this, use the reference snippet:
 </p>

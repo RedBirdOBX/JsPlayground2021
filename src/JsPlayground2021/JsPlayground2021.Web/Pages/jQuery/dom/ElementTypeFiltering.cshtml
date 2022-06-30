@@ -4,7 +4,7 @@
 
 @{
     string pageId = "Element Type Filtering";
-    Layout = "~/Pages/Shared/_Layout.cshtml";
+    Layout = "~/Pages/Shared/_PageLayout.cshtml";
 }
 
 @{
@@ -12,11 +12,12 @@
 }
 
 @section LibraryHeader {jQuery}
-@section BreadCrumbLibrary {jquery}
-@section BreadCrumbAnchor {jq-dom}
-@section BreadCrumbChapter {dom}
-@section BreadCrumbPageName {@pageId.ToLower()}
 @section PageName {@pageId}
+
+@section Menu
+{
+    <partial name="_JQueryMenu" />
+}
 
 <p>
     If you want to select one or more html element <strong>types</strong> and use CSS / jQuery selectors, you can use the colon selector.

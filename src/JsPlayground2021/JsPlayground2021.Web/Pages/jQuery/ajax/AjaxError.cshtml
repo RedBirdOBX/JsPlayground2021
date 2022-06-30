@@ -4,7 +4,7 @@
 
 @{
     string pageId = "AjaxError";
-    Layout = "~/Pages/Shared/_Layout.cshtml";
+    Layout = "~/Pages/Shared/_PageLayout.cshtml";
 }
 
 @{
@@ -12,12 +12,12 @@
 }
 
 @section LibraryHeader {jQuery}
-@section BreadCrumbLibrary {jquery}
-@section BreadCrumbAnchor {jq-ajax}
-@section BreadCrumbChapter {ajax}
-@section BreadCrumbPageName {@pageId.ToLower()}
 @section PageName {@pageId}
 
+@section Menu
+{
+    <partial name="_JQueryMenu" />
+}
 
 <p>The jQuery <code>ajaxError()</code> method specifies a function to be run when an AJAX request fails.</p>
 
