@@ -4,7 +4,7 @@
 
 @{
     string pageId = "jQuery";
-    Layout = "~/Pages/Shared/_Layout.cshtml";
+    Layout = "~/Pages/Shared/_PageLayout.cshtml";
 }
 
 @{
@@ -12,14 +12,17 @@
 }
 
 @section LibraryHeader {JavaScript}
-@section BreadCrumbLibrary {javascript}
-@section BreadCrumbAnchor {js-widgets}
-@section BreadCrumbChapter {widgets}
-@section BreadCrumbPageName {@pageId.ToLower()}
 @section PageName {@pageId}
 
+@section Menu
+{
+    <partial name="_JQueryMenu" />
+}
 <div class="row">
     <div class="col-12">
+        <div class="d-flex justify-content-center">
+            <img src="assets/images/jquery-logo.png" class="max-w-d-200px" />
+        </div>
     </div>
 </div>
 

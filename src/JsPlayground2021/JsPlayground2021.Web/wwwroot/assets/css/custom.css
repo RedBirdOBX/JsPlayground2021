@@ -4,3 +4,8 @@
     border: 1px solid;
     border-color: #d4d4d4;
 }
+
+.max-w-d-200px {
+    max-height: 200px;
+    max-width: 200px;
+}

@@ -3,8 +3,8 @@
 @model JsPlayground.Pages.Javascript.TypeScriptIndex
 
 @{
-    string pageId = "JavaScripts";
-    Layout = "~/Pages/Shared/_Layout.cshtml";
+    string pageId = "TypeScript";
+    Layout = "~/Pages/Shared/_PageLayout.cshtml";
 }
 
 @{
@@ -12,14 +12,18 @@
 }
 
 @section LibraryHeader {JavaScript}
-@section BreadCrumbLibrary {javascript}
-@section BreadCrumbAnchor {js-widgets}
-@section BreadCrumbChapter {widgets}
-@section BreadCrumbPageName {@pageId.ToLower()}
 @section PageName {@pageId}
+
+@section Menu
+{
+    <partial name="_TypeScriptMenu" />
+}
 
 <div class="row">
     <div class="col-12">
+        <div class="d-flex justify-content-center">
+            <img src="assets/images/typescript-logo.png" class="max-w-d-200px" />
+        </div>
     </div>
 </div>
 
