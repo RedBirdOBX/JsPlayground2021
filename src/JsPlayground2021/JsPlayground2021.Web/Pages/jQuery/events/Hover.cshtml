@@ -4,7 +4,7 @@
 
 @{
     string pageId = "hover()";
-    Layout = "~/Pages/Shared/_Layout.cshtml";
+    Layout = "~/Pages/Shared/_PageLayout.cshtml";
 }
 
 @{
@@ -12,11 +12,12 @@
 }
 
 @section LibraryHeader {jQuery}
-@section BreadCrumbLibrary {jquery}
-@section BreadCrumbAnchor {jq-events}
-@section BreadCrumbChapter {events}
-@section BreadCrumbPageName {@pageId.ToLower()}
 @section PageName {@pageId}
+
+@section Menu
+{
+    <partial name="_JQueryMenu" />
+}
 
 <p>
     Hover is simply a combination of mouseover and mouseout.  jQuery combines the two and makes it a little easier to write.

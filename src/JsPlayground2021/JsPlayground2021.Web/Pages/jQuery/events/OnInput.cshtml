@@ -4,7 +4,7 @@
 
 @{
     string pageId = "On Input";
-    Layout = "~/Pages/Shared/_Layout.cshtml";
+    Layout = "~/Pages/Shared/_PageLayout.cshtml";
 }
 
 @{
@@ -12,12 +12,12 @@
 }
 
 @section LibraryHeader {jQuery}
-@section BreadCrumbLibrary {jquery}
-@section BreadCrumbAnchor {jq-events}
-@section BreadCrumbChapter {events}
-@section BreadCrumbPageName {@pageId.ToLower()}
 @section PageName {@pageId}
 
+@section Menu
+{
+    <partial name="_JQueryMenu" />
+}
 
 <p>
     By using <code>on()</code> and specifying the <code>input</code> event, you can detect when the value of an input
