@@ -8,4 +8,8 @@
     <None Remove="buildspec.yml" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\assets\css\bootstrap\513\bootswatch\simplex\" />
+  </ItemGroup>
+
 </Project>
