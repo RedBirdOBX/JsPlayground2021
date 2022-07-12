@@ -10,5 +10,5 @@ phases:
       - dotnet publish -c release -o ./build_output src/JsPlayground2021/JsPlayground2021.Web/JsPlayground2021.Web.csproj
 artifacts:
   files:
-    - '**/*'
+    - '**'
   base-directory: './build_output'
