@@ -11,5 +11,5 @@ phases:
 artifacts:
   files:
     - '**'
-    # - '/assets/css/**'
+    - '/assets/css/**'
   base-directory: './build_output'
