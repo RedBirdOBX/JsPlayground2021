@@ -10,6 +10,7 @@ phases:
       - dotnet publish -c release -o ./build_output src/JsPlayground2021/JsPlayground2021.Web/JsPlayground2021.Web.csproj
 artifacts:
   files:
+    - '**/*'
     - '**'
     - '/wwwroot/**'
     - '/assets/css/bootstrap5.1.3/bootswatch/simplex/**'
