@@ -4,5 +4,11 @@
     "inputFiles": [
       "wwwroot/assets/css/test.css"
     ]
+  },
+  {
+    "outputFileName": "wwwroot/assets/css/bootstrap5.1.3/bootswatch/simplex/theme.min.css",
+    "inputFiles": [
+      "wwwroot/assets/css/bootstrap5.1.3/bootswatch/simplex/theme.css"
+    ]
   }
 ]
