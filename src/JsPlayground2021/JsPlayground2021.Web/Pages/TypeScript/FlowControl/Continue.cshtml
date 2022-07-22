@@ -1,5 +1,7 @@
 ﻿@page
 
+@using JsPlayground2021.Web.Data.Enums
+
 @model JsPlayground.Pages.TypeScript.FlowControl.ContinueModel
 
 @{
@@ -16,7 +18,7 @@
 
 @section Menu
 {
-    <partial name="_TypeScriptMenu" />
+        <partial name="_MenuContainer" model="MenuType.TypeScript" />
 }
 <p>
     The <code>continue</code> statement breaks one iteration (in the loop), if a specified condition occurs, and continues with the next

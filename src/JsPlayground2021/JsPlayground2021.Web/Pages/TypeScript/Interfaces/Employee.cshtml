@@ -1,5 +1,7 @@
 ﻿@page
 
+@using JsPlayground2021.Web.Data.Enums
+
 @model JsPlayground.Pages.TypeScript.Interfaces.EmployeeModel
 
 @{
@@ -16,7 +18,7 @@
 
 @section Menu
 {
-    <partial name="_TypeScriptMenu" />
+        <partial name="_MenuContainer" model="MenuType.TypeScript" />
 }
 
 <p>This is a good example of how to use an interface.  Like c#, it helps establish a contract.  Notice that:</p>

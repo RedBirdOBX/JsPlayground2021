@@ -1,5 +1,7 @@
 ﻿@page
 
+@using JsPlayground2021.Web.Data.Enums
+
 @model JsPlayground.Pages.TypeScript.Challenges.EqualDivisionModel
 
 @{
@@ -16,7 +18,7 @@
 
 @section Menu
 {
-    <partial name="_TypeScriptMenu" />
+        <partial name="_MenuContainer" model="MenuType.TypeScript" />
 }
 <p>
     Here are three examples of how to take a list and divide them up into 2 buckets as equally as possible.

@@ -1,5 +1,7 @@
 ﻿@page
 
+@using JsPlayground2021.Web.Data.Enums
+
 @model JsPlayground.Pages.TypeScript.DeclarationFiles.BasicsModel
 
 @{
@@ -16,7 +18,7 @@
 
 @section Menu
 {
-    <partial name="_TypeScriptMenu" />
+        <partial name="_MenuContainer" model="MenuType.TypeScript" />
 }
 <p>
     Sometimes ...quite often...we need to write code which refers to other libraries (jQuery, jQuery validation, etc…). We

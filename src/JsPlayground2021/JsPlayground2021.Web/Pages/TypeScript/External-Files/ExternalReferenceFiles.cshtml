@@ -1,5 +1,7 @@
 ﻿@page
 
+@using JsPlayground2021.Web.Data.Enums
+
 @model JsPlayground.Pages.TypeScript.External_Files.ExternalReferenceFilesModel
 
 @{
@@ -16,7 +18,7 @@
 
 @section Menu
 {
-    <partial name="_TypeScriptMenu" />
+        <partial name="_MenuContainer" model="MenuType.TypeScript" />
 }
 <p>
     Often, you need to reference classes in other files (see Ambient Declarations). To do this, use the reference snippet:
