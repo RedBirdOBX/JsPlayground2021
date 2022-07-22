@@ -1,6 +1,7 @@
 ﻿@page
 
-@model JsPlayground.Pages.Javascript.Navigation.FirstChildModel
+@using JsPlayground2021.Web.Data.Enums
+@using JsPlayground.Pages.Javascript.Navigation
 
 
 @{
@@ -17,7 +18,7 @@
 
 @section Menu
 {
-    <partial name="_JavaScriptMenu" />
+    <partial name="_MenuContainer" model="MenuType.Javascipt" />
 }
 
 <p id="demo">Hello!</p>

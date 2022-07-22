@@ -1,5 +1,8 @@
 ﻿@page
 
+@using JsPlayground2021.Web.Data.Enums
+@using JsPlayground.Pages.Javascript.Global_Functions
+
 @model JsPlayground.Pages.Javascript.Global_Functions.ParseFloatModel
 
 
@@ -17,7 +20,7 @@
 
 @section Menu
 {
-    <partial name="_JavaScriptMenu" />
+    <partial name="_MenuContainer" model="MenuType.Javascipt" />
 }
 
 

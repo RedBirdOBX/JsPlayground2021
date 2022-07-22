@@ -1,0 +1,19 @@
+﻿@using JsPlayground2021.Web.Data.Enums
+
+@model MenuType
+
+@switch (Model)
+{
+    case MenuType.Javascipt:
+        <partial name="_JavaScriptMenu" />
+        break;
+
+    case MenuType.TypeScript:
+        <partial name="_TypeScriptMenu" />
+        break;
+
+    case MenuType.jQuery:
+        <partial name="_JQueryMenu" />
+        break;
+}
+
