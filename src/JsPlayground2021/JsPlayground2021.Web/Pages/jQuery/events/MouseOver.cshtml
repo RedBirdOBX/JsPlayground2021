@@ -1,5 +1,7 @@
 ﻿@page
 
+@using JsPlayground2021.Web.Data.Enums
+
 @model JsPlayground.Pages.jquery.events.MouseOverModel
 
 @{
@@ -16,7 +18,7 @@
 
 @section Menu
 {
-    <partial name="_JQueryMenu" />
+        <partial name="_MenuContainer" model="MenuType.jQuery" />
 }
 
 <h5>Simple JQuery Table Row Event Handler</h5>

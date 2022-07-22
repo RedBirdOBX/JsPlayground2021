@@ -1,5 +1,7 @@
 ﻿@page
 
+@using JsPlayground2021.Web.Data.Enums
+
 @model JsPlayground.Pages.jquery.ajax.AjaxASyncModel
 
 @{
@@ -16,7 +18,7 @@
 
 @section Menu
 {
-    <partial name="_JQueryMenu" />
+        <partial name="_MenuContainer" model="MenuType.jQuery" />
 }
 
 <p><a href="https://petetasker.com/using-async-await-jquerys-ajax" target="_blank">https://petetasker.com/using-async-await-jquerys-ajax</a></p>

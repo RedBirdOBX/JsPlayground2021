@@ -1,5 +1,7 @@
 ﻿@page
 
+@using JsPlayground2021.Web.Data.Enums
+
 @model JsPlayground.Pages.jquery.plugins.CountDownNewModel
 
 @{
@@ -16,7 +18,7 @@
 
 @section Menu
 {
-    <partial name="_JQueryMenu" />
+        <partial name="_MenuContainer" model="MenuType.jQuery" />
 }
 
 <link href="/assets/css/theme.css" rel="stylesheet" />
