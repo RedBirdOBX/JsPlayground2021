@@ -1,0 +1,12 @@
+﻿@using JsPlayground2021.Web.Data.ViewModels
+
+@model QuoteModel
+
+<figure>
+  <blockquote class="blockquote">
+    <p>@Model.Quote</p>
+  </blockquote>
+  <figcaption class="blockquote-footer">
+        @Model.Author <cite>@Model.Source</cite>
+  </figcaption>
+</figure>
