@@ -1,5 +1,7 @@
 ﻿@page
 
+@using JsPlayground2021.Web.Data.Enums
+
 @model JsPlayground.Pages.Javascript.JavaScriptIndex
 
 @{
@@ -16,13 +18,13 @@
 
 @section Menu
 {
-    <partial name="_JavaScriptMenu" />
+    <partial name="_MenuContainer" model="MenuType.Javascipt" />
 }
 
 <div class="row">
     <div class="col-12">
         <div class="d-flex justify-content-center">
-            <img src="assets/images/js-logo.png" class="max-w-d-200px" />
+            <img src="/assets/images/js-logo.png" class="max-w-d-200px" />
         </div>
     </div>
 </div>

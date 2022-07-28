@@ -1,5 +1,7 @@
 ﻿@page
 
+@using JsPlayground2021.Web.Data.Enums
+
 @model JsPlayground.Pages.jquery.dom.EqModel
 
 @{
@@ -20,7 +22,7 @@
 
 @section Menu
 {
-    <partial name="_JQueryMenu" />
+        <partial name="_MenuContainer" model="MenuType.jQuery" />
 }
 
 <p>

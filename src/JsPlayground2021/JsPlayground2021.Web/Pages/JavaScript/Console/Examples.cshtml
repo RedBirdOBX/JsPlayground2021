@@ -1,5 +1,8 @@
 ﻿@page
 
+@using JsPlayground2021.Web.Data.Enums
+@using JsPlayground.Pages.Javascript.Console
+
 @{
     Layout = "~/Pages/Shared/_PageLayout.cshtml";
 }
@@ -13,7 +16,7 @@
 
 @section Menu
 {
-    <partial name="_JavaScriptMenu" />
+    <partial name="_MenuContainer" model="MenuType.Javascipt" />
 }
 
 <p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Console/dir" target="_blank">https://developer.mozilla.org/en-US/docs/Web/API/Console/dir</a></p>

@@ -35,7 +35,7 @@
         <div class="col-4">
             <div class="d-flex justify-content-center">
                 <a asp-page="/JavaScript/Index">
-                    <img src="assets/images/js-logo.png" class="max-w-d-200px" />
+                    <img src="/assets/images/js-logo.png" class="max-w-d-200px" />
                 </a>
             </div>
         </div>
@@ -43,7 +43,7 @@
         <div class="col-4">
             <div class="d-flex justify-content-center">
                 <a asp-page="/TypeScript/Index">
-                    <img src="assets/images/typescript-logo.png" class="max-w-d-200px" />
+                    <img src="/assets/images/typescript-logo.png" class="max-w-d-200px" />
                 </a>
             </div>
         </div>
@@ -51,10 +51,18 @@
         <div class=col-4>
             <div class="d-flex justify-content-center">
                 <a asp-page="/jQuery/Index">
-                    <img src="assets/images/jquery-logo.png" class="max-w-d-200px" />
+                    <img src="/assets/images/jquery-logo.png" class="max-w-d-200px" />
                 </a>
             </div>
         </div>
+    </div>
+
+    <div class="my-5">
+        &nbsp;
+    </div>
+
+    <div class="my-5">
+        @await  Component.InvokeAsync("Quote")
     </div>
 
 </div>

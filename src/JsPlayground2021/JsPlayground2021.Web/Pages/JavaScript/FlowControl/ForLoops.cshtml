@@ -1,5 +1,7 @@
 ﻿@page
 
+@using JsPlayground2021.Web.Data.Enums
+
 @{
     Layout = "~/Pages/Shared/_PageLayout.cshtml";
 }
@@ -13,7 +15,7 @@
 
 @section Menu
 {
-    <partial name="_JavaScriptMenu" />
+    <partial name="_MenuContainer" model="MenuType.Javascipt" />
 }
 
 <h4>for</h4>

@@ -1,5 +1,8 @@
 ﻿@page
 
+@using JsPlayground2021.Web.Data.Enums
+@using JsPlayground.Pages.Javascript.Basics
+
 @{
     Layout = "~/Pages/Shared/_PageLayout.cshtml";
 }
@@ -13,7 +16,7 @@
 
 @section Menu
 {
-    <partial name="_JavaScriptMenu" />
+    <partial name="_MenuContainer" model="MenuType.Javascipt" />
 }
 
 <p>Notice that you can (just like with jQuery), grab a element and manipulate it.</p>

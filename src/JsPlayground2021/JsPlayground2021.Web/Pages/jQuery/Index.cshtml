@@ -1,5 +1,7 @@
 ﻿@page
 
+@using JsPlayground2021.Web.Data.Enums
+
 @model JsPlayground.Pages.Javascript.JQueryIndex
 
 @{
@@ -16,12 +18,12 @@
 
 @section Menu
 {
-    <partial name="_JQueryMenu" />
+        <partial name="_MenuContainer" model="MenuType.jQuery" />
 }
 <div class="row">
     <div class="col-12">
         <div class="d-flex justify-content-center">
-            <img src="assets/images/jquery-logo.png" class="max-w-d-200px" />
+            <img src="/assets/images/jquery-logo.png" class="max-w-d-200px" />
         </div>
     </div>
 </div>

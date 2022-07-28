@@ -1,5 +1,8 @@
 ﻿@page
 
+@using JsPlayground2021.Web.Data.Enums
+@using JsPlayground.Pages.Javascript.Strings
+
 @model JsPlayground.Pages.Javascript.Strings.ToStringModel
 
 @{
@@ -16,7 +19,7 @@
 
 @section Menu
 {
-    <partial name="_JavaScriptMenu" />
+    <partial name="_MenuContainer" model="MenuType.Javascipt" />
 }
 
 <p>

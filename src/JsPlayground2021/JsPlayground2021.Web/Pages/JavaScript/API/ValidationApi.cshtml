@@ -1,5 +1,7 @@
 ﻿@page
-@using JsPlayground.Pages.Javascript.API 
+
+@using JsPlayground2021.Web.Data.Enums
+@using JsPlayground.Pages.Javascript.API
 
 @model ValidationAPIModel
 
@@ -16,7 +18,7 @@
 
 @section Menu
 {
-    <partial name="_JavaScriptMenu" />
+    <partial name="_MenuContainer" model="MenuType.Javascipt" />
 }
 
 
