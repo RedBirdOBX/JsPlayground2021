@@ -1,0 +1,202 @@
+﻿@page
+
+@{
+    Layout = "~/Pages/Shared/_HomeLayout.cshtml";
+}
+
+@model JsPlayground.Pages.Javascript.DevIndex
+
+@{
+    ViewData["Title"] = "DEV Section";
+}
+
+<header>
+    <div class="container mt-3">
+        <h2 class="text-center">JsPlayground 2021 DEV</h2>
+    </div>
+</header>
+
+<div class="container mt-5">
+
+    <div class="row">
+
+        <div class="col-2">
+
+            <ul class="list-group margin-top-75px">
+                <li class="list-group-item"><a href="#colors">Colors</a></li>
+                <li class="list-group-item"><a href="#typography">Typography</a></li>
+                <li class="list-group-item"><a href="#buttons">Buttons</a></li>
+                <li class="list-group-item"><a href="#components">Components</a></li>
+            </ul>
+
+        </div>
+
+        <div class="col-10">
+
+            @*Colors*@
+            <section>
+
+                <h1><a href="#" id="colors"></a>Colors</h1>
+
+                <div class="row">
+
+                    <div class="col-10 col-sm-offset-1">
+
+                        <table class="table table-bordered table-responsive">
+
+                            <thead>
+                                <tr>
+                                    <th>Sample</th>
+                                    <th>Name</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+
+                                <tr>
+                                    <td class="bg-light"></td>
+                                    <td>light</td>
+                                </tr>
+
+                                <tr>
+                                    <td class="bg-dark"></td>
+                                    <td>dark</td>
+                                </tr>
+
+                                <tr>
+                                    <td class="bg-primary"></td>
+                                    <td>primary</td>
+                                </tr>
+
+                                <tr>
+                                    <td class="bg-secondary"></td>
+                                    <td>secondary</td>
+                                </tr>
+
+                                <tr>
+                                    <td class="bg-success"></td>
+                                    <td>success</td>
+                                </tr>
+
+                                <tr>
+                                    <td class="bg-danger"></td>
+                                    <td>danger</td>
+                                </tr>
+
+                                <tr>
+                                    <td class="bg-warning"></td>
+                                    <td>warning</td>
+                                </tr>
+
+                                <tr>
+                                    <td class="bg-info"></td>
+                                    <td>info</td>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <div class="my-5"></div>
+
+            @*Typography*@
+            <section>
+
+                <h1><a href="#" id="typography"></a>Typography</h1>
+
+                <h1>header 1</h1>
+                <h2>header 2</h2>
+                <h3>header 3</h3>
+                <h4>header 4</h4>
+                <h5>header 5</h5>
+
+                <p class="lead">Lead - Ye hands belay plunder</p>
+                <p>
+                    Ye hands belay plunder Plate Fleet Pieces of Eight fire ship sutler Pirate Round booty.
+                    Fire in the hole Sink me chandler run a rig jolly boat execution dock jib belay weigh anchor Arr.
+                    Mutiny gangplank crow's nest spike furl line gally Arr warp lookout.
+                </p>
+                <p class="text-muted">muted - Ye hands belay plunder Plate Fleet Pieces of Eight fire ship sutler Pirate Round booty.</p>
+                <p class="text-info">info - Ye hands belay plunder Plate Fleet Pieces of Eight fire ship sutler Pirate Round booty.</p>
+                <p class="text-primary">primary - Ye hands belay plunder Plate Fleet Pieces of Eight fire ship sutler Pirate Round booty.</p>
+                <p class="text-warning">warning - Ye hands belay plunder Plate Fleet Pieces of Eight fire ship sutler Pirate Round booty.</p>
+                <p class="text-danger">danger - Ye hands belay plunder Plate Fleet Pieces of Eight fire ship sutler Pirate Round booty.</p>
+
+                <p class="header-font lead">This is the font used for headers and emphasis.</p>
+
+                <p class="content-font lead">This is the font used for standard content.</p>
+
+            </section>
+
+            <div class="my-5"></div>
+
+            @*Buttons*@
+            <section>
+
+                <h1><a href="#" id="buttons"></a>Buttons</h1>
+
+                <button type="button" class="btn btn-primary">Primary</button>
+                <button type="button" class="btn btn-secondary">Secondary</button>
+                <button type="button" class="btn btn-success">Success</button>
+                <button type="button" class="btn btn-danger">Danger</button>
+                <button type="button" class="btn btn-warning">Warning</button>
+                <button type="button" class="btn btn-info">Info</button>
+                <button type="button" class="btn btn-light">Light</button>
+                <button type="button" class="btn btn-dark">Dark</button>
+                <button type="button" class="btn btn-link">Link</button>
+
+                <p><strong>Button States</strong></p>
+
+                <button type="button" class="btn btn-primary" disabled>Primary button</button>
+                <button type="button" class="btn btn-secondary" disabled>Button</button>
+                <button type="button" class="btn btn-outline-primary" disabled>Primary button</button>
+                <button type="button" class="btn btn-outline-secondary" disabled>Button</button>
+
+                <p><strong>Button Sizes</strong></p>
+
+                <button type="button" class="btn btn-primary btn-lg">Large button</button>
+                <button type="button" class="btn btn-secondary btn-lg">Large button</button>
+                <button type="button" class="btn btn-primary btn-sm">Small button</button>
+                <button type="button" class="btn btn-secondary btn-sm">Small button</button>
+
+                <p><strong>Button Groups</strong></p>
+
+                <div class="btn-group" role="group" aria-label="Basic example">
+                  <button type="button" class="btn btn-primary">Left</button>
+                  <button type="button" class="btn btn-primary">Middle</button>
+                  <button type="button" class="btn btn-primary">Right</button>
+                </div>
+
+            </section>
+
+            <div class="my-5"></div>
+
+            @*Components*@
+            <section>
+
+                <h1><a href="#" id="components"></a>Components</h1>
+
+                <div class="small my-0">results:</div>
+                <div class="border border-primary mb-3 p-3">
+                    <p class="lead" id="demo">output results here.....</p>
+                </div>
+
+            </section>
+
+
+        </div>
+
+    </div>
+
+    <div class="my-5">
+        &nbsp;
+    </div>
+
+</div>
+
