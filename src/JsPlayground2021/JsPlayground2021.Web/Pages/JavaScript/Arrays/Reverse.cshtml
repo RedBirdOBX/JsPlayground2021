@@ -31,10 +31,6 @@
     The <code>reverse()</code> method sorts an array in reverse order and treats all items as <strong>strings</strong>.
 </p>
 
-<div>
-    <h3 class="text-danger" id="demo"></h3>
-</div>
-
 <pre>
 <code>
 // notice that we sorted it first and then reversed it.
@@ -42,6 +38,13 @@ let fruits = ["Banana", "Apple", "Orange", "Lemon", "Mango"];
 document.getElementById("demo").innerHTML = fruits.<mark>sort().reverse()</mark>.join("-");
 </code>
 </pre>
+
+<div class="card text-white bg-info mt-1">
+    <div class="card-body">
+        <div class="small my-0"><em>results:</em></div>
+        <div id="demo"></div>
+    </div>
+</div>
 
 <p>&nbsp;</p>
 

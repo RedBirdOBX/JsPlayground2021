@@ -32,12 +32,6 @@
     first array element and "shifts" all other elements to a lower index. It DOES reassign new indexes.
 </p>
 
-<div>
-    <h3 class="text-danger" id="before"></h3>
-    <h3 class="text-danger" id="after"></h3>
-    <h3 class="text-danger" id="demo2"></h3>
-</div>
-
 <pre>
 <code>
 let fruits = ["Banana", "Orange", "Apple", "Mango"];
@@ -52,6 +46,15 @@ for (var i = 0; i &lt; fruits.length; i++) { output +="The index is " + i + "&lt
 document.getElementById("demo2").innerHTML=output;
 </code>
 </pre>
+
+<div class="card text-white bg-info mt-1">
+    <div class="card-body">
+        <div class="small my-0"><em>results:</em></div>
+        <div id="before"></div>
+        <div id="after"></div>
+        <div id="demo"></div>
+    </div>
+</div>
 
 <p>&nbsp;</p>
 
