@@ -49,12 +49,10 @@ document.getElementById("demo1").innerHTML = ages.filter(CheckForAdult);
 </code>
 </pre>
 
-<div class="card text-white bg-info m-3 col-3">
+<div class="card text-white bg-info mt-1">
     <div class="card-body">
-        <div>
-            <h4 class="text-white text-center">Adult ages</h4>
-            <p class="text-white text-center" id="demo1"></p>
-        </div>
+        <div class="small my-0"><em>results:</em></div>
+        <div id="demo1"></div>
     </div>
 </div>
 
@@ -73,11 +71,11 @@ document.getElementById("demo2").innerHTML = ages.filter(<mark>(a) => a < 18</ma
 </code>
 </pre>
 
-<div class="card text-white bg-info m-3 col-3">
+<div class="card text-white bg-info mt-1">
     <div class="card-body">
         <div>
-            <h4 class="text-white text-center">Youth ages</h4>
-            <p class="text-white text-center" id="demo2"></p>
+            <h4 class="text-white">Youth ages</h4>
+            <div id="demo2"></div>
         </div>
     </div>
 </div>
@@ -100,12 +98,11 @@ let femaleAuthors = authors.filter((<mark>author</mark>) =>
 </code>
 </pre>
 
-<div class="card text-white bg-info m-3 col-3">
+<div class="card text-white bg-info mt-1">
     <div class="card-body">
-        <div id="">
-            <h4 class="text-white text-center">Female Authors</h4>
-            <p class="text-white text-center" id="demo3"></p>
-        </div>
+        <div class="small my-0"><em>results:</em></div>
+        <h4 class="text-white">Female Authors</h4>
+        <div id="demo3"></div>
     </div>
 </div>
 
