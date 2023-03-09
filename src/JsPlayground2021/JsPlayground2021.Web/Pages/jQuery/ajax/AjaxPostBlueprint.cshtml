@@ -42,7 +42,7 @@
     <a href="https://api.jquery.com/jQuery.ajax/" target="_blank">https://api.jquery.com/jQuery.ajax/</a>
 </p>
 
-<p>View the console.</p>
+@*<p>View the console.</p>
 
 <p class="text-center">
     <button id="StartCallsButton"
@@ -51,9 +51,9 @@
             type="button">
         Create City
     </button>
-</p>
+</p>*@
 
-<div id="demo-container" class="row d-none">
+@*<div id="demo-container" class="row">
     <div class="col-12">
         <div class="card text-white bg-info">
             <div class="card-body">
@@ -62,11 +62,11 @@
             </div>
         </div>
     </div>
-</div>
+</div>*@
 
 <p>&nbsp;</p>
 
-<pre id="code-container" class="d-none">
+<pre id="code-container" class="">
 <code>
 async function CreateCity()
 {
@@ -219,9 +219,9 @@ async function CreateNewCity(json)
             html += `description: ${newCity.description}<br />`;
             html += `points of interest count: ${newCity.numberOfPointsOfInterest}<br />`;
 
-            $("#demo-content").html(html);
-            $("#demo-container").removeClass("d-none");
-            $("#code-container").removeClass("d-none");
+            //$("#demo-content").html(html);
+            //$("#demo-container").removeClass("d-none");
+            //$("#code-container").removeClass("d-none");
         }
     </script>
 }
