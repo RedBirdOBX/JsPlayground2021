@@ -19,14 +19,14 @@
 <div class="container mt-5">
 
     <p>
-        This site is simple collection of concepts and samples which I have written over the past several years. 
+        This site is simple collection of concepts and samples which I have written over the past several years.
         As I learned something new, or relearned something I once knew and forgotten is more likely,
-        I would whip up a little demo page within this site so I could refer back to it whenever needed. 
+        I would whip up a little demo page within this site so I could refer back to it whenever needed.
         The practice and the archiving of these tasks has been very beneficial.
     </p>
 
     <p>
-        Use as you wish and at your own risk. I make no guarantees regarding the quality of this code - it is simply for my 
+        Use as you wish and at your own risk. I make no guarantees regarding the quality of this code - it is simply for my
         own personal reference. Perhaps you will find it useful too.
     </p>
 
@@ -67,3 +67,42 @@
 
 </div>
 
+<script>
+    // Q: how might you improve this?
+    // A: use let.  define the counter outside of the loop or use 2nd variable.
+    var output = "";
+    for (var i = 1; i < 6; i++)
+    {
+        output = `The number is ${i}.`;
+        console.log(output);
+    }
+
+    // Q: will this line work?
+    // A: unfortunately, yes.
+    console.log(`final counter: ${i}`);
+
+
+    // better version
+    let output2 = "";
+    let finalNum = 0;
+    for (let x = 1; x < 6; x++)
+    {
+        output2 = `The number is ${x}.`;
+        console.log(output2);
+        finalNum = x;
+    }
+    console.log(`final counter: ${finalNum}`);
+
+
+    // Q - I have an array of 6 items.  I want to split them into two arrays.
+    // I know that I want to take the first 2 indexes from the original array and create array 1.
+    // I want the remaining indexes of the original array into array 2.
+    // How might I do that?
+    let numbers = [100, 200, 300, 400, 500, 600];
+
+    // A: slice
+    let array1 = numbers.slice(0,2);
+    let array2 = numbers.slice(2);
+    console.log(array1);
+    console.log(array2);
+</script>
