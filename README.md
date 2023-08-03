@@ -7,7 +7,7 @@ Use as you wish and at your own risk.  I make no guarantees regarding the qualit
 
 ----------
 
-A live version of this source code can be seen here:  [http://jsplayground2021web-prod.us-east-1.elasticbeanstalk.com/](http://jsplayground2021web-prod.us-east-1.elasticbeanstalk.com/ "http://jsplayground2021web-prod.us-east-1.elasticbeanstalk.com/")
+A live version of this source code can be seen here:  [http://jsplayground2021web-prod.us-east-1.elasticbeanstalk.com/](https://dsf-jsplayground.azurewebsites.net/)]( "[http://jsplayground2021web-prod.us-east-1.elasticbeanstalk.com/](https://dsf-jsplayground.azurewebsites.net/)https://dsf-jsplayground.azurewebsites.net/")
 
 
 
