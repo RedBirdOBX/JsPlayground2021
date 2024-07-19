@@ -49,7 +49,7 @@ let { ...rickyBobby } = person;
 // for UI. Method wants an array.
 const DisplayPersonData = (person) =>
 {
-    $("#spread-demo").html(`Name: ${person["Name"]}<br />Occupation: ${person["Occupation"]}`)
+    $("#spread-demo").html(`Name: ${person["Name"]}&lt;br /&gt;Occupation: ${person["Occupation"]}`)
 };
 
 DisplayPersonData(rickyBobby);
