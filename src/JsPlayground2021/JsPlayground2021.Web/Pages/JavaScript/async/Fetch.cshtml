@@ -21,6 +21,8 @@
     <partial name="_MenuContainer" model="MenuType.Javascipt" />
 }
 
+<p>Note: Look at <a href="await">await</a> instead.</p>
+
 <p>
     The Fetch API provides a JavaScript interface for accessing and manipulating parts of the HTTP pipeline, such as
     requests and responses. It also provides a global fetch() method that provides an easy, logical way to fetch resources
@@ -37,7 +39,7 @@
 
 <ul>
     <li>
-        The Promise returned from fetch() won’t reject on HTTP error status even if the response is an HTTP 404 or 500. Instead,
+        The Promise (object) returned from fetch() won’t reject on HTTP error status even if the response is an HTTP 404 or 500. Instead,
         it will resolve normally <strong>(with ok status set to false)</strong>, and it will only reject on network failure or if anything
         prevented the request from completing.
     </li>
@@ -50,8 +52,9 @@
 
 <p>Things to remember:</p>
 <ul>
-    <li><code>fetch()</code> returns a <code>promise</code> ("response")</li>
-    <li>use a <code>.then</code> call to evaluate the promise</li>
+    <li><code>fetch()</code> returns a <code>promise</code> ("response") object</li>
+    <li>use a <code>.then</code> call to evaluate the promise object</li>
+    <li>use then() for async calls that need to be awaited</li>
     <li>the response is raw so we will prob need to turn it into json as shown in the code sample</li>
     <li>this is an async call.  your response must <code>await</code> the fetch call.</li>
 </ul>
@@ -68,29 +71,45 @@
 
 <pre>
 <code>
-let FetchData = async () =>
+const url = 'https://api.github.com';
+
+// fetch is async
+const FetchData = () =>
 {
-    let response = await fetch("https://city-info-api-prod.azurewebsites.net/api/v1.0/cities?pagenumber=1&pagesize=10");
-    let data = await response.json();
-    let firstCity = data[0];
-    document.getElementById("demo").innerHTML = `${firstCity.cityId} - ${firstCity.name}`;
+    // fetch is async and returns a promise obj
+    // we use the then() method to consume the promise object
+    fetch(url).then((promise) =>
+    {
+        // provide the callback function to the then() method
+        // this callback function receives the 'promise'... the data back from the api
+        // we need to parse the raw data as json
+        // the json method is also async so we need to use a then() as well.
+        promise.json().then((promiseJson) =>
+        {
+            console.log(promiseJson);
+            document.getElementById("demo").innerHTML =
+            `
+                ${promiseJson.authorizations_url}&lt;br />
+                ${promiseJson.code_search_url}&lt;br />
+                ${promiseJson.emails_url}
+            `;
+        });
+    });
+
+
 };
 
-FetchData();
-    </code>
+
+window.onload = function ()
+{
+    FetchData();
+}
+</code>
 </pre>
+
+<script src="/assets/javascripts/pages/javascript/fetch.js" asp-append-version="true"></script>
 
 
 @section Scripts
 {
-    <script>
-        let FetchData = async () => {
-            let response = await fetch("https://city-info-api-prod.azurewebsites.net/api/v1.0/cities?pagenumber=1&pagesize=10");
-            let data = await response.json();
-            let firstCity = data[0];
-            document.getElementById("demo").innerHTML = `${firstCity.cityId} - ${firstCity.name}`;
-        };
-
-        FetchData();
-    </script>
 }

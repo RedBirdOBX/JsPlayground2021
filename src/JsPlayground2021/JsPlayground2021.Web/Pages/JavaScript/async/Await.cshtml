@@ -1,0 +1,72 @@
+﻿@page
+
+@using JsPlayground2021.Web.Data.Enums
+@using JsPlayground.Pages.Javascript.async
+
+@model AwaitModel
+
+@{
+    Layout = "~/Pages/Shared/_PageLayout.cshtml";
+}
+
+@{
+    ViewData["Title"] = "async await";
+}
+
+@section LibraryHeader {JavaScript}
+@section PageName {async await}
+
+@section Menu
+{
+    <partial name="_MenuContainer" model="MenuType.Javascipt" />
+}
+
+<p>
+    We can use the older technique of using <a href="fetch">fetch()</a> to call an
+    API asynchronously and also using the <code>.then()</code> method of that
+    promise response object but there is a more modern approach.
+</p>
+
+<p>
+    The more modern way to consume promises in JavaScript is using <code>await</code>.
+    By labeling the function with <code>await</code> and using async, we can eliminate
+    the use of the <code>.then()</code> method.
+</p>
+
+<div class="card text-white bg-info m-3">
+    <div class="card-body">
+        <div id="demo"></div>
+    </div>
+</div>
+
+<pre>
+<code>
+const url = 'https://api.github.com';
+
+const FetchData = async () =>
+{
+    const resp = await fetch(url);
+    const jsonData = await resp.json();
+    console.log(jsonData);
+    document.getElementById("demo").innerHTML =
+    `
+        ${jsonData.authorizations_url}&lt;br />
+        ${jsonData.code_search_url}&lt;br />
+        ${jsonData.emails_url}
+    `;
+};
+
+window.onload = function ()
+{
+    FetchData();
+}
+
+</code>
+</pre>
+
+<script src="/assets/javascripts/pages/javascript/await.js" asp-append-version="true"></script>
+
+
+@section Scripts
+{
+}
