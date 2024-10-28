@@ -93,7 +93,8 @@ let intervalTimerId = setInterval(UpdateDisplay, 1000);
             clearInterval(intervalTimerId);
         }
 
-        const UpdateDisplay = () => {
+        const UpdateDisplay = () =>
+        {
             document.getElementById("demo1").innerHTML = `Showing message in ${countdown}.`;
             countdown--;
         }
@@ -107,6 +108,9 @@ let intervalTimerId = setInterval(UpdateDisplay, 1000);
         let countdown = 10;
         let delay = 10000;
         let timeoutTimerId = setTimeout(ShowMessage, delay);
+        console.log(`timeoutTimerId: ${timeoutTimerId}`);
+
         let intervalTimerId = setInterval(UpdateDisplay, 1000);
+        console.log(`intervalTimerId: ${intervalTimerId}`);
     </script>
 }
