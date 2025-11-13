@@ -46,17 +46,27 @@
     </a>
 </p>
 
+<p>
+    You can also use lambda expressions with <code>.map()</code>.
+</p>
+
 <pre>
 <code>
-function Capitalize(fruit)
+const Capitalize = (fruit) =>
 {
     return fruit.toUpperCase();
+};
+
+window.onload = function ()
+{
+    let fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+    let capFruitsArray = fruits.map(Capitalize);
+    document.getElementById("demo").innerHTML = capFruitsArray.join(" - ");
+
+    let lcFruits = fruits.map(f => f.toLowerCase());
+    document.getElementById("demo2").innerHTML = lcFruits.join(" - ");
 }
-
-let fruitsArray = ["Banana", "Orange", "Apple", "Mango"];
-let capFruitsArray = fruits.map(Capitalize)
-
-document.getElementById("demo").innerHTML = capFruitsArray.join(" - ");
 </code>
 </pre>
 
@@ -64,45 +74,14 @@ document.getElementById("demo").innerHTML = capFruitsArray.join(" - ");
     <div class="card-body">
         <div class="small my-0"><em>results:</em></div>
         <div id="demo"></div>
-    </div>
-</div>
-
-<p>&nbsp;</p>
-
-<p>
-    You can also use lambda expressions with <code>.map()</code>.
-</p>
-
-<pre>
-<code>
-let lcFruits = fruitsArray.map(<mark>f => f.toLowerCase()</mark>);
-document.getElementById("demo2").innerHTML = lcFruits.join(" - ");
-</code>
-</pre>
-
-<div class="card text-white bg-info mt-1">
-    <div class="card-body">
-        <div class="small my-0"><em>results:</em></div>
         <div id="demo2"></div>
     </div>
 </div>
 
 <p>&nbsp;</p>
 
+<script src="/assets/javascripts/pages/javascript/map.js" asp-append-version="true"></script>
 
 @section Scripts
 {
-    <script>
-        function Capitalize(fruit) {
-            return fruit.toUpperCase();
-        }
-
-        let fruitsArray = ["Banana", "Orange", "Apple", "Mango"];
-
-        let capFruitsArray = fruitsArray.map(Capitalize)
-        document.getElementById("demo").innerHTML = capFruitsArray.join(" - ");
-
-        let lcFruits = fruitsArray.map(f => f.toLowerCase());
-        document.getElementById("demo2").innerHTML = lcFruits.join(" - ");
-    </script>
 }
